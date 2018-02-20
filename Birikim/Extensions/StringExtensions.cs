@@ -107,7 +107,7 @@ namespace Birikim.Extensions
         /// </summary>
         public static string FormatWithMask(this string input, string mask)
         {
-            if (input == null) return input;
+            if (input == null) return null;
             var output = string.Empty;
             var index = 0;
             foreach (var m in mask)

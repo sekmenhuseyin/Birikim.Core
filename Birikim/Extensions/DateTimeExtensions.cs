@@ -78,7 +78,7 @@ namespace Birikim.Extensions
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        public static int ToOADate(this DateTime date)
+        public static int ToOaDate(this DateTime date)
         {
             try { return Convert.ToInt32(date.ToOADate()); }
             catch { return 0; }

@@ -49,13 +49,13 @@ namespace Birikim.Extensions
         /// Convert OaDate to String date format
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="Format"></param>
+        /// <param name="format"></param>
         /// <returns></returns>
-        public static string FromOADate(this int value, string Format = "")
+        public static string FromOaDate(this int value, string format = "")
         {
             try
             {
-                return DateTime.FromOADate(value).ToString(Format);
+                return DateTime.FromOADate(value).ToString(format);
             }
             catch
             {
