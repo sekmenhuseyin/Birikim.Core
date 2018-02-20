@@ -63,9 +63,9 @@
     <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Birikim.Core\Birikim.Core.csproj">
+    <ProjectReference Include="..\Birikim\Birikim.csproj">
       <Project>{430d5c58-48c6-4031-88da-244299499fb1}</Project>
-      <Name>Birikim.Core</Name>
+      <Name>Birikim</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
