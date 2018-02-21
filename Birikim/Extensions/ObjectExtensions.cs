@@ -49,5 +49,57 @@ namespace Birikim.Extensions
 
             return (T)Convert.ChangeType(obj, typeof(T), CultureInfo.InvariantCulture);
         }
+
+        /// <summary>
+        /// <para>Gelen değeri Bool türüne dönüştürür.</para>
+        /// Hata olursa false döner.
+        /// </summary>
+        public static bool ToBool(this object value)
+        {
+            try { return Convert.ToBoolean(value); }
+            catch { return false; }
+        }
+
+        /// <summary>
+        /// Null ve DBNULL kontrolü yapar 
+        /// </summary>
+        public static bool IsNull(this object value)
+        {
+            if (value == DBNull.Value || value == null)
+                return true;
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Null ve DBNULL değilse true döner
+        /// </summary>
+        public static bool IsNotNull(this object value)
+        {
+            if (value == DBNull.Value || value == null)
+                return false;
+            else
+                return true;
+        }
+
+        /// <summary>
+        /// <para>Gelen değeri String türüne dönüştürür.</para>
+        /// Trimle boşluklar atılır. Hata olursa "" döner.
+        /// </summary>
+        public static string ToString2(this object value)
+        {
+            try { return Convert.ToString(value).Trim(); }
+            catch { return ""; }
+        }
+
+        /// <summary>
+        /// Genellikle decimal veya float tiplerde database tarafına kayıt
+        /// atarken ondalık kısmı "," olarak gördüğünden hata verir. 
+        /// Bunu önlemek için ToDot() extension metodu kullanılır.
+        /// </summary>
+        public static object ToDot(this object value)
+        {
+            return value.ToString().Replace(',', '.');
+        }
     }
 }
