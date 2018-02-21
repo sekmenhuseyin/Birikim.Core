@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Birikim
+namespace Birikim.Helpers
 {
     /// <summary>
     /// A shortcut to use <see cref="Random"/> class.
