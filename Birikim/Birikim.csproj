@@ -64,6 +64,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Enums\Islem.cs" />
     <Compile Include="Enums\Operand.cs" />
+    <Compile Include="Extensions\SqlExperExtension.cs" />
+    <Compile Include="Helpers\SqlExperOperatorIslem.cs" />
     <Compile Include="Models\Prop.cs" />
     <Compile Include="Enums\SetIslem.cs" />
     <Compile Include="Enums\SQLType.cs" />

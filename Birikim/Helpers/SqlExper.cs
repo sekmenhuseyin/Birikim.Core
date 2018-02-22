@@ -26,11 +26,11 @@ namespace Birikim.Helpers
             SqlExKomutDizisi.Clear();
         }
 
-        private SqlExper(SQLType SqlType = SQLType.NONE)
+        private SqlExper(SQLType sqlType = SQLType.NONE)
         {
             Parametreler = new List<object>();
 
-            switch (SqlType)
+            switch (sqlType)
             {
                 case SQLType.NONE:
                     SqlKomut = "";
