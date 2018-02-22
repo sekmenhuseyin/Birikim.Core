@@ -1,4 +1,4 @@
-using EmailValidation;
+﻿using EmailValidation;
 using System;
 using System.Globalization;
 using System.Linq;
@@ -13,7 +13,6 @@ namespace Birikim.Extensions
     /// </summary>
     public static class StringExtensions
     {
-
         /// <summary>
         /// Adds a char to end of given string if it does not ends with the char.
         /// </summary>
@@ -558,6 +557,137 @@ namespace Birikim.Extensions
             }
 
             return str.Left(maxLength - postfix.Length) + postfix;
+        }
+
+        /// <summary>
+        /// sql veritabanındaki tiplarin c sharptaki, karşılıklarını getirir
+        /// </summary>
+        public static string SqlToCsharpType(this string dataType, bool isNullable = false)
+        {
+            string tip;
+
+            switch (dataType)
+            {
+                case "char":
+                case "varchar":
+                case "nchar":
+                case "nvarchar":
+                case "text":
+                case "ntext":
+                case "xml":
+                    {
+                        tip = "string";
+                        isNullable = false;
+                        break;
+                    }
+                case "bit":
+                    {
+                        tip = "bool";
+                        break;
+                    }
+                case "int":
+                    {
+                        tip = "int";
+                        break;
+                    }
+                case "tinyint":
+                    {
+                        tip = "byte";
+                        break;
+                    }
+                case "bigint":
+                    {
+                        tip = "long";
+                        break;
+                    }
+                case "smallint":
+                    {
+                        tip = "short";
+                        break;
+                    }
+                case "date":
+                case "smalldatetime":
+                case "datetime":
+                case "datetime2":
+                    {
+                        tip = "DateTime";
+                        break;
+                    }
+                case "datetimeoffset":
+                    {
+                        tip = "DateTimeOffset";
+                        break;
+                    }
+                case "time":
+                    {
+                        tip = "TimeSpan";
+                        break;
+                    }
+                case "float":
+                    {
+                        tip = "double";
+                        break;
+                    }
+                case "numeric":
+                case "decimal":
+                case "money":
+                case "smallmoney":
+                    {
+                        tip = "decimal";
+                        break;
+                    }
+                case "real":
+                    {
+                        tip = "float";
+                        break;
+                    }
+                case "binary":
+                case "varbinary":
+                case "image":
+                case "timestamp":
+                case "rowversion":
+                case "filestream":
+                    {
+                        tip = "byte[]";
+                        isNullable = false;
+                        break;
+                    }
+                case "sql_variant":
+                    {
+                        tip = "object";
+                        break;
+                    }
+                case "uniqueidentifier":
+                    {
+                        tip = "Guid";
+                        break;
+                    }
+                case "geography":
+                    {
+                        tip = "Microsoft.SqlServer.Types.SqlGeography";
+                        break;
+                    }
+                case "geometry":
+                    {
+                        tip = "Microsoft.SqlServer.Types.SqlGeometry";
+                        break;
+                    }
+                case "hierarchyid":
+                    {
+                        tip = "Microsoft.SqlServer.Types.SqlHierarchyId";
+                        break;
+                    }
+                default:
+                    {
+                        tip = "object";
+                        break;
+                    }
+            }
+
+            if (isNullable)
+                return string.Format("{0}?", tip);
+
+            return tip;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Birikim.Helpers
 {
     public class SqlExper
     {
-        public short IndexValue = 0;
+        public short IndexValue;
 
         private List<SqlExper> SqlExKomutDizisi = new List<SqlExper>();
 
