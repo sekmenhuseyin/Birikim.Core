@@ -74,23 +74,41 @@ namespace Birikim.Extensions
         }
 
         /// <summary>
-        /// 
+        /// converts given date to oadate
         /// </summary>
-        /// <param name="date"></param>
-        /// <returns></returns>
         public static int ToOaDate(this DateTime date)
         {
             try { return Convert.ToInt32(date.ToOADate()); }
             catch { return 0; }
         }
+
+        /// <summary>
+        /// converts given date to oadate
+        /// </summary>
+        public static int ToOaDate(this DateTime? date)
+        {
+            if (date == null)
+                return 0;
+            try { return Convert.ToInt32(date.Value.ToOADate()); }
+            catch { return 0; }
+        }
+
         /// <summary>
         /// Converts given time to OaTime
         /// </summary>
-        /// <param name="date"></param>
-        /// <returns></returns>
         public static int ToOaTime(this DateTime date)
         {
             return date.Hour * 60 * 60 + date.Minute * 60 + date.Second;
+        }
+
+        /// <summary>
+        /// Converts given time to OaTime
+        /// </summary>
+        public static int ToOaTime(this DateTime? date)
+        {
+            if (date == null)
+                return 0;
+            return date.Value.Hour * 60 * 60 + date.Value.Minute * 60 + date.Value.Second;
         }
 
         /// <summary>
