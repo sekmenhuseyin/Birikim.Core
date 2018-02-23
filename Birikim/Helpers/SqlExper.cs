@@ -73,9 +73,6 @@ namespace Birikim.Helpers
             }
         }
 
-        public int Eklenen_SatirSayisi { get; private set; }
-        public int Guncellenen_SatirSayisi { get; private set; }
-        public int Silinen_SatirSayisi { get; private set; }
         private string ConStr { get; }
         private List<object> Parametreler { get; set; }
         private string SirketKodu { get; }
@@ -86,39 +83,30 @@ namespace Birikim.Helpers
         /// <summary>
         /// kaydet
         /// </summary>
-        public void AcceptChanges()
+        public Result AcceptChanges()
         {
             try
             {
-                Eklenen_SatirSayisi = 0;
-                Guncellenen_SatirSayisi = 0;
-                Silinen_SatirSayisi = 0;
-                int RowCount = 0;
-                using (TransactionScope Scope = new TransactionScope())
+                using (TransactionScope scope = new TransactionScope())
                 {
-                    using (DataContext Context = new DataContext(ConStr))
+                    using (DataContext context = new DataContext(ConStr))
                     {
-                        Context.CommandTimeout = 7200;
+                        context.CommandTimeout = 7200;
                         foreach (SqlExper item in _sqlExKomutDizisi)
                         {
-                            RowCount = Context.ExecuteCommand(item.SqlKomut, item.Parametreler.ToArray());
+                            context.ExecuteCommand(item.SqlKomut, item.Parametreler.ToArray());
 
-                            if (item.SqlIslem == "INSERT")
-                                Eklenen_SatirSayisi += RowCount;
-                            else if (item.SqlIslem == "UPDATE")
-                                Guncellenen_SatirSayisi += RowCount;
-                            else if (item.SqlIslem == "DELETE")
-                                Silinen_SatirSayisi += RowCount;
                         }
                     }
-                    Scope.Complete();
+                    scope.Complete();
                     _sqlExKomutDizisi.Clear();
+                    return new Result(true);
                 }
             }
             catch (Exception hata)
             {
                 _sqlExKomutDizisi.Clear();
-                throw hata;
+                return new Result(false, hata.Message);
             }
         }
 

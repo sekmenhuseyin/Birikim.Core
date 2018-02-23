@@ -93,6 +93,7 @@
     <Compile Include="Mail\EmailService.cs" />
     <Compile Include="Mail\Interfaces\IEmailConfiguration.cs" />
     <Compile Include="Mail\Interfaces\IEmailService.cs" />
+    <Compile Include="Models\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\SimpleCryptography.cs" />
   </ItemGroup>
