@@ -1,6 +1,3 @@
-using Birikim.Enums;
-using Birikim.Helpers;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -60,143 +57,85 @@ namespace Birikim.Models.Finsat
 
     public class MFK : INotifyPropertyChanged
     {
+        public static readonly string StandartFields = @"'IslemTip','EvrakNo','EvrakTarih','HesapKod','KynkEvrakTip',
+           'Tarih','Tutar','Aciklama','Aciklama2','Aciklama3','Aciklama4','Aciklama5','Aciklama6','Kod1','Kod2','Kod3',
+           'Kod4','Kod5','Kod6','Kod7','Nesne1','Nesne2','Nesne3','OnaySemaKod','OnayIslemTip','OnayStatus',
+           'SonOnaylayan','Onaylayan1','Onaylayan2','Onaylayacak','GuvenlikKod','Kaydeden','KayitTarih','KayitSaat',
+           'KayitKaynak','KayitSurum','Degistiren','DegisTarih','DegisSaat','DegisKaynak','DegisSurum',
+           'CheckSum', 'Row_ID', 'timestamp'";
 
-        short islemTip;
-        string evrakNo;
-        int evrakTarih;
-        string hesapKod;
-        short kynkEvrakTip;
-        int tarih;
-        decimal tutar;
-        string aciklama;
-        string aciklama2;
-        string aciklama3;
-        string aciklama4;
-        string aciklama5;
-        string aciklama6;
-        string kod1;
-        string kod2;
-        string kod3;
-        string kod4;
-        string kod5;
-        decimal kod6;
-        decimal kod7;
-        string nesne1;
-        string nesne2;
-        string nesne3;
-        int onaySemaKod;
-        short onayIslemTip;
-        short onayStatus;
-        string sonOnaylayan;
-        string onaylayan1;
-        string onaylayan2;
-        string onaylayacak;
-        string guvenlikKod;
-        string kaydeden;
-        int kayitTarih;
-        int kayitSaat;
-        short kayitKaynak;
-        string kayitSurum;
-        string degistiren;
-        int degisTarih;
-        int degisSaat;
-        short degisKaynak;
-        string degisSurum;
-        short checkSum;
-        string depo;
-        string onayTakipNo;
-        int rOW_ID;
-        byte[] _timestamp;
-        short _pk_IslemTip;
-        string _pk_EvrakNo;
-        int _pk_EvrakTarih;
-        string _pk_HesapKod;
-        short _pk_KynkEvrakTip;
+        private string _Aciklama;
+        private string _Aciklama2;
+        private string _Aciklama3;
+        private string _Aciklama4;
+        private string _Aciklama5;
+        private string _Aciklama6;
+        private short _CheckSum;
+        private short _DegisKaynak;
+        private int _DegisSaat;
+        private string _DegisSurum;
+        private int _DegisTarih;
+        private string _Degistiren;
+        private string _EvrakNo;
+        private int _EvrakTarih;
+        private string _GuvenlikKod;
+        private string _HesapKod;
+        private short _IslemTip;
+        private string _Kaydeden;
+        private short _KayitKaynak;
+        private int _KayitSaat;
+        private string _KayitSurum;
+        private int _KayitTarih;
+        private string _Kod1;
+        private string _Kod2;
+        private string _Kod3;
+        private string _Kod4;
+        private string _Kod5;
+        private decimal _Kod6;
+        private decimal _Kod7;
+        private short _KynkEvrakTip;
+        private string _Nesne1;
+        private string _Nesne2;
+        private string _Nesne3;
+        private short _OnayIslemTip;
+        private string _Onaylayacak;
+        private string _Onaylayan1;
+        private string _Onaylayan2;
+        private int _OnaySemaKod;
+        private short _OnayStatus;
+        private string _pk_EvrakNo;
+        private int _pk_EvrakTarih;
+        private string _pk_HesapKod;
+        private short _pk_IslemTip;
+        private short _pk_KynkEvrakTip;
+        private int _Row_ID;
+        private string _SonOnaylayan;
+        private int _Tarih;
+        private byte[] _timestamp;
+        private decimal _Tutar;
+        private List<string> ChangedProperties = new List<string>();
 
-        /// <summary> SMALLINT (2) PrimaryKey * </summary>
-        public short IslemTip
+        private string info_FullTableName = "FINSAT6{0}.FINSAT6{0}.MFK";
+
+        private string[] info_IdentityKeys = { "Row_ID" };
+
+        private string[] info_PrimaryKeys = { "pk_IslemTip", "pk_EvrakNo", "pk_EvrakTarih", "pk_HesapKod", "pk_KynkEvrakTip" };
+
+        public MFK()
         {
-            get { return islemTip; }
-            set
-            {
-                islemTip = value;
-                OnPropertyChanged("IslemTip");
-            }
+            ChangedProperties = new List<string>();
+            this.PropertyChanged += MFK_PropertyChanged;
         }
 
-        /// <summary> VARCHAR (16) PrimaryKey * </summary>
-        public string EvrakNo
-        {
-            get { return evrakNo; }
-            set
-            {
-                evrakNo = value;
-                OnPropertyChanged("EvrakNo");
-            }
-        }
-
-        /// <summary> INT (4) PrimaryKey * </summary>
-        public int EvrakTarih
-        {
-            get { return evrakTarih; }
-            set
-            {
-                evrakTarih = value;
-                OnPropertyChanged("EvrakTarih");
-            }
-        }
-
-        /// <summary> VARCHAR (20) PrimaryKey * </summary>
-        public string HesapKod
-        {
-            get { return hesapKod; }
-            set
-            {
-                hesapKod = value;
-                OnPropertyChanged("HesapKod");
-            }
-        }
-
-        /// <summary> SMALLINT (2) PrimaryKey * </summary>
-        public short KynkEvrakTip
-        {
-            get { return kynkEvrakTip; }
-            set
-            {
-                kynkEvrakTip = value;
-                OnPropertyChanged("KynkEvrakTip");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int Tarih
-        {
-            get { return tarih; }
-            set
-            {
-                tarih = value;
-                OnPropertyChanged("Tarih");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Tutar
-        {
-            get { return tutar; }
-            set
-            {
-                tutar = value;
-                OnPropertyChanged("Tutar");
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary> VARCHAR (120) * </summary>
         public string Aciklama
         {
-            get { return aciklama; }
+            get { return this._Aciklama; }
             set
             {
-                aciklama = value;
+                this._Aciklama = value;
                 OnPropertyChanged("Aciklama");
             }
         }
@@ -204,10 +143,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (120) * </summary>
         public string Aciklama2
         {
-            get { return aciklama2; }
+            get { return this._Aciklama2; }
             set
             {
-                aciklama2 = value;
+                this._Aciklama2 = value;
                 OnPropertyChanged("Aciklama2");
             }
         }
@@ -215,10 +154,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (120) * </summary>
         public string Aciklama3
         {
-            get { return aciklama3; }
+            get { return this._Aciklama3; }
             set
             {
-                aciklama3 = value;
+                this._Aciklama3 = value;
                 OnPropertyChanged("Aciklama3");
             }
         }
@@ -226,10 +165,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (120) * </summary>
         public string Aciklama4
         {
-            get { return aciklama4; }
+            get { return this._Aciklama4; }
             set
             {
-                aciklama4 = value;
+                this._Aciklama4 = value;
                 OnPropertyChanged("Aciklama4");
             }
         }
@@ -237,10 +176,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (120) * </summary>
         public string Aciklama5
         {
-            get { return aciklama5; }
+            get { return this._Aciklama5; }
             set
             {
-                aciklama5 = value;
+                this._Aciklama5 = value;
                 OnPropertyChanged("Aciklama5");
             }
         }
@@ -248,21 +187,197 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (120) * </summary>
         public string Aciklama6
         {
-            get { return aciklama6; }
+            get { return this._Aciklama6; }
             set
             {
-                aciklama6 = value;
+                this._Aciklama6 = value;
                 OnPropertyChanged("Aciklama6");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short CheckSum
+        {
+            get { return this._CheckSum; }
+            set
+            {
+                this._CheckSum = value;
+                OnPropertyChanged("CheckSum");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DegisKaynak
+        {
+            get { return this._DegisKaynak; }
+            set
+            {
+                this._DegisKaynak = value;
+                OnPropertyChanged("DegisKaynak");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int DegisSaat
+        {
+            get { return this._DegisSaat; }
+            set
+            {
+                this._DegisSaat = value;
+                OnPropertyChanged("DegisSaat");
+            }
+        }
+
+        /// <summary> VARCHAR (12) * </summary>
+        public string DegisSurum
+        {
+            get { return this._DegisSurum; }
+            set
+            {
+                this._DegisSurum = value;
+                OnPropertyChanged("DegisSurum");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int DegisTarih
+        {
+            get { return this._DegisTarih; }
+            set
+            {
+                this._DegisTarih = value;
+                OnPropertyChanged("DegisTarih");
+            }
+        }
+
+        /// <summary> VARCHAR (5) * </summary>
+        public string Degistiren
+        {
+            get { return this._Degistiren; }
+            set
+            {
+                this._Degistiren = value;
+                OnPropertyChanged("Degistiren");
+            }
+        }
+
+        /// <summary> VARCHAR (16) PrimaryKey * </summary>
+        public string EvrakNo
+        {
+            get { return this._EvrakNo; }
+            set
+            {
+                this._EvrakNo = value;
+                OnPropertyChanged("EvrakNo");
+            }
+        }
+
+        /// <summary> INT (4) PrimaryKey * </summary>
+        public int EvrakTarih
+        {
+            get { return this._EvrakTarih; }
+            set
+            {
+                this._EvrakTarih = value;
+                OnPropertyChanged("EvrakTarih");
+            }
+        }
+
+        /// <summary> VARCHAR (2) * </summary>
+        public string GuvenlikKod
+        {
+            get { return this._GuvenlikKod; }
+            set
+            {
+                this._GuvenlikKod = value;
+                OnPropertyChanged("GuvenlikKod");
+            }
+        }
+
+        /// <summary> VARCHAR (20) PrimaryKey * </summary>
+        public string HesapKod
+        {
+            get { return this._HesapKod; }
+            set
+            {
+                this._HesapKod = value;
+                OnPropertyChanged("HesapKod");
+            }
+        }
+
+        /// <summary> SMALLINT (2) PrimaryKey * </summary>
+        public short IslemTip
+        {
+            get { return this._IslemTip; }
+            set
+            {
+                this._IslemTip = value;
+                OnPropertyChanged("IslemTip");
+            }
+        }
+
+        /// <summary> VARCHAR (5) * </summary>
+        public string Kaydeden
+        {
+            get { return this._Kaydeden; }
+            set
+            {
+                this._Kaydeden = value;
+                OnPropertyChanged("Kaydeden");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short KayitKaynak
+        {
+            get { return this._KayitKaynak; }
+            set
+            {
+                this._KayitKaynak = value;
+                OnPropertyChanged("KayitKaynak");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int KayitSaat
+        {
+            get { return this._KayitSaat; }
+            set
+            {
+                this._KayitSaat = value;
+                OnPropertyChanged("KayitSaat");
+            }
+        }
+
+        /// <summary> VARCHAR (12) * </summary>
+        public string KayitSurum
+        {
+            get { return this._KayitSurum; }
+            set
+            {
+                this._KayitSurum = value;
+                OnPropertyChanged("KayitSurum");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int KayitTarih
+        {
+            get { return this._KayitTarih; }
+            set
+            {
+                this._KayitTarih = value;
+                OnPropertyChanged("KayitTarih");
             }
         }
 
         /// <summary> VARCHAR (10) * </summary>
         public string Kod1
         {
-            get { return kod1; }
+            get { return this._Kod1; }
             set
             {
-                kod1 = value;
+                this._Kod1 = value;
                 OnPropertyChanged("Kod1");
             }
         }
@@ -270,10 +385,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (10) * </summary>
         public string Kod2
         {
-            get { return kod2; }
+            get { return this._Kod2; }
             set
             {
-                kod2 = value;
+                this._Kod2 = value;
                 OnPropertyChanged("Kod2");
             }
         }
@@ -281,10 +396,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (10) * </summary>
         public string Kod3
         {
-            get { return kod3; }
+            get { return this._Kod3; }
             set
             {
-                kod3 = value;
+                this._Kod3 = value;
                 OnPropertyChanged("Kod3");
             }
         }
@@ -292,10 +407,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (10) * </summary>
         public string Kod4
         {
-            get { return kod4; }
+            get { return this._Kod4; }
             set
             {
-                kod4 = value;
+                this._Kod4 = value;
                 OnPropertyChanged("Kod4");
             }
         }
@@ -303,10 +418,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (20) * </summary>
         public string Kod5
         {
-            get { return kod5; }
+            get { return this._Kod5; }
             set
             {
-                kod5 = value;
+                this._Kod5 = value;
                 OnPropertyChanged("Kod5");
             }
         }
@@ -314,10 +429,10 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal Kod6
         {
-            get { return kod6; }
+            get { return this._Kod6; }
             set
             {
-                kod6 = value;
+                this._Kod6 = value;
                 OnPropertyChanged("Kod6");
             }
         }
@@ -325,21 +440,32 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal Kod7
         {
-            get { return kod7; }
+            get { return this._Kod7; }
             set
             {
-                kod7 = value;
+                this._Kod7 = value;
                 OnPropertyChanged("Kod7");
+            }
+        }
+
+        /// <summary> SMALLINT (2) PrimaryKey * </summary>
+        public short KynkEvrakTip
+        {
+            get { return this._KynkEvrakTip; }
+            set
+            {
+                this._KynkEvrakTip = value;
+                OnPropertyChanged("KynkEvrakTip");
             }
         }
 
         /// <summary> VARCHAR (254) * </summary>
         public string Nesne1
         {
-            get { return nesne1; }
+            get { return this._Nesne1; }
             set
             {
-                nesne1 = value;
+                this._Nesne1 = value;
                 OnPropertyChanged("Nesne1");
             }
         }
@@ -347,10 +473,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (254) * </summary>
         public string Nesne2
         {
-            get { return nesne2; }
+            get { return this._Nesne2; }
             set
             {
-                nesne2 = value;
+                this._Nesne2 = value;
                 OnPropertyChanged("Nesne2");
             }
         }
@@ -358,65 +484,43 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (254) * </summary>
         public string Nesne3
         {
-            get { return nesne3; }
+            get { return this._Nesne3; }
             set
             {
-                nesne3 = value;
+                this._Nesne3 = value;
                 OnPropertyChanged("Nesne3");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int OnaySemaKod
-        {
-            get { return onaySemaKod; }
-            set
-            {
-                onaySemaKod = value;
-                OnPropertyChanged("OnaySemaKod");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short OnayIslemTip
         {
-            get { return onayIslemTip; }
+            get { return this._OnayIslemTip; }
             set
             {
-                onayIslemTip = value;
+                this._OnayIslemTip = value;
                 OnPropertyChanged("OnayIslemTip");
             }
         }
 
-        /// <summary> SMALLINT (2) * </summary>
-        public short OnayStatus
-        {
-            get { return onayStatus; }
-            set
-            {
-                onayStatus = value;
-                OnPropertyChanged("OnayStatus");
-            }
-        }
-
         /// <summary> VARCHAR (5) * </summary>
-        public string SonOnaylayan
+        public string Onaylayacak
         {
-            get { return sonOnaylayan; }
+            get { return this._Onaylayacak; }
             set
             {
-                sonOnaylayan = value;
-                OnPropertyChanged("SonOnaylayan");
+                this._Onaylayacak = value;
+                OnPropertyChanged("Onaylayacak");
             }
         }
 
         /// <summary> VARCHAR (5) * </summary>
         public string Onaylayan1
         {
-            get { return onaylayan1; }
+            get { return this._Onaylayan1; }
             set
             {
-                onaylayan1 = value;
+                this._Onaylayan1 = value;
                 OnPropertyChanged("Onaylayan1");
             }
         }
@@ -424,211 +528,43 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (5) * </summary>
         public string Onaylayan2
         {
-            get { return onaylayan2; }
+            get { return this._Onaylayan2; }
             set
             {
-                onaylayan2 = value;
+                this._Onaylayan2 = value;
                 OnPropertyChanged("Onaylayan2");
             }
         }
 
-        /// <summary> VARCHAR (5) * </summary>
-        public string Onaylayacak
-        {
-            get { return onaylayacak; }
-            set
-            {
-                onaylayacak = value;
-                OnPropertyChanged("Onaylayacak");
-            }
-        }
-
-        /// <summary> VARCHAR (2) * </summary>
-        public string GuvenlikKod
-        {
-            get { return guvenlikKod; }
-            set
-            {
-                guvenlikKod = value;
-                OnPropertyChanged("GuvenlikKod");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string Kaydeden
-        {
-            get { return kaydeden; }
-            set
-            {
-                kaydeden = value;
-                OnPropertyChanged("Kaydeden");
-            }
-        }
-
         /// <summary> INT (4) * </summary>
-        public int KayitTarih
+        public int OnaySemaKod
         {
-            get { return kayitTarih; }
+            get { return this._OnaySemaKod; }
             set
             {
-                kayitTarih = value;
-                OnPropertyChanged("KayitTarih");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int KayitSaat
-        {
-            get { return kayitSaat; }
-            set
-            {
-                kayitSaat = value;
-                OnPropertyChanged("KayitSaat");
+                this._OnaySemaKod = value;
+                OnPropertyChanged("OnaySemaKod");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short KayitKaynak
+        public short OnayStatus
         {
-            get { return kayitKaynak; }
+            get { return this._OnayStatus; }
             set
             {
-                kayitKaynak = value;
-                OnPropertyChanged("KayitKaynak");
-            }
-        }
-
-        /// <summary> VARCHAR (12) * </summary>
-        public string KayitSurum
-        {
-            get { return kayitSurum; }
-            set
-            {
-                kayitSurum = value;
-                OnPropertyChanged("KayitSurum");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string Degistiren
-        {
-            get { return degistiren; }
-            set
-            {
-                degistiren = value;
-                OnPropertyChanged("Degistiren");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int DegisTarih
-        {
-            get { return degisTarih; }
-            set
-            {
-                degisTarih = value;
-                OnPropertyChanged("DegisTarih");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int DegisSaat
-        {
-            get { return degisSaat; }
-            set
-            {
-                degisSaat = value;
-                OnPropertyChanged("DegisSaat");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DegisKaynak
-        {
-            get { return degisKaynak; }
-            set
-            {
-                degisKaynak = value;
-                OnPropertyChanged("DegisKaynak");
-            }
-        }
-
-        /// <summary> VARCHAR (12) * </summary>
-        public string DegisSurum
-        {
-            get { return degisSurum; }
-            set
-            {
-                degisSurum = value;
-                OnPropertyChanged("DegisSurum");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short CheckSum
-        {
-            get { return checkSum; }
-            set
-            {
-                checkSum = value;
-                OnPropertyChanged("CheckSum");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string Depo
-        {
-            get { return depo; }
-            set
-            {
-                depo = value;
-                OnPropertyChanged("Depo");
-            }
-        }
-
-        /// <summary> VARCHAR (16) * </summary>
-        public string OnayTakipNo
-        {
-            get { return onayTakipNo; }
-            set
-            {
-                onayTakipNo = value;
-                OnPropertyChanged("OnayTakipNo");
-            }
-        }
-
-        /// <summary> INT (4) IdentityKey * </summary>
-        public int ROW_ID => rOW_ID;
-
-        /// <summary> TIMESTAMP (8) * </summary>
-        public byte[] timestamp
-        {
-            get { return _timestamp; }
-            set
-            {
-                _timestamp = value;
-                OnPropertyChanged("timestamp");
-            }
-        }
-
-        /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
-        public short pk_IslemTip
-        {
-            private get { return _pk_IslemTip; }
-            set
-            {
-                _pk_IslemTip = value;
-                OnPropertyChanged("pk_IslemTip");
+                this._OnayStatus = value;
+                OnPropertyChanged("OnayStatus");
             }
         }
 
         /// <summary> VARCHAR (16) PRIMARY KEY * </summary>
         public string pk_EvrakNo
         {
-            private get { return _pk_EvrakNo; }
+            private get { return this._pk_EvrakNo; }
             set
             {
-                _pk_EvrakNo = value;
+                this._pk_EvrakNo = value;
                 OnPropertyChanged("pk_EvrakNo");
             }
         }
@@ -636,10 +572,10 @@ namespace Birikim.Models.Finsat
         /// <summary> INT (4) PRIMARY KEY * </summary>
         public int pk_EvrakTarih
         {
-            private get { return _pk_EvrakTarih; }
+            private get { return this._pk_EvrakTarih; }
             set
             {
-                _pk_EvrakTarih = value;
+                this._pk_EvrakTarih = value;
                 OnPropertyChanged("pk_EvrakTarih");
             }
         }
@@ -647,69 +583,92 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (20) PRIMARY KEY * </summary>
         public string pk_HesapKod
         {
-            private get { return _pk_HesapKod; }
+            private get { return this._pk_HesapKod; }
             set
             {
-                _pk_HesapKod = value;
+                this._pk_HesapKod = value;
                 OnPropertyChanged("pk_HesapKod");
+            }
+        }
+
+        /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
+        public short pk_IslemTip
+        {
+            private get { return this._pk_IslemTip; }
+            set
+            {
+                this._pk_IslemTip = value;
+                OnPropertyChanged("pk_IslemTip");
             }
         }
 
         /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
         public short pk_KynkEvrakTip
         {
-            private get { return _pk_KynkEvrakTip; }
+            private get { return this._pk_KynkEvrakTip; }
             set
             {
-                _pk_KynkEvrakTip = value;
+                this._pk_KynkEvrakTip = value;
                 OnPropertyChanged("pk_KynkEvrakTip");
             }
         }
 
-        public MFK()
+        /// <summary> INT (4) IdentityKey * </summary>
+        public int Row_ID
         {
-            ChangedProperties = new List<string>();
-            PropertyChanged += MFK_PropertyChanged;
+            get { return this._Row_ID; }
         }
 
-        public void WhereAdd(MFKE Property, object deger, Operand and_Or = Operand.AND)
+        /// <summary> VARCHAR (5) * </summary>
+        public string SonOnaylayan
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(MFKE), Property), deger, and_Or));
+            get { return this._SonOnaylayan; }
+            set
+            {
+                this._SonOnaylayan = value;
+                OnPropertyChanged("SonOnaylayan");
+            }
         }
 
-        public void WhereAdd(MFKE Property, Islem islem, object Deger, Operand And_Or = Operand.AND)
+        /// <summary> INT (4) * </summary>
+        public int Tarih
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(MFKE), Property), islem, Deger, And_Or));
+            get { return this._Tarih; }
+            set
+            {
+                this._Tarih = value;
+                OnPropertyChanged("Tarih");
+            }
         }
 
-        public void WhereAdd(MFKE Property, Operand In_NotIn, params object[] Degerler_Parantez)
+        /// <summary> TIMESTAMP (8) * </summary>
+        public byte[] timestamp
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(MFKE), Property), In_NotIn, Degerler_Parantez));
+            get { return this._timestamp; }
+            set
+            {
+                this._timestamp = value;
+                OnPropertyChanged("timestamp");
+            }
         }
 
-        public void WhereAdd(params object[] Degerler)
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal Tutar
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Degerler));
+            get { return this._Tutar; }
+            set
+            {
+                this._Tutar = value;
+                OnPropertyChanged("Tutar");
+            }
         }
 
-        /// <summary> Set işleminde Property " = " eşit ile otomatik başlar. </summary>
-        public void SetAdd(MFKE Property, params object[] Degerler)
+        public void AcceptChanges()
         {
-            SetList.Add(SqlExperOperatorIslem.SetAdd(Enum.GetName(typeof(MFKE), Property), Degerler));
+            ChangedProperties.Clear();
         }
 
-        List<string> WhereList = new List<string>();
-        List<string> SetList = new List<string>();
-        string info_FullTableName = "FINSAT6{0}.FINSAT6{0}.MFK";
-        string[] info_PrimaryKeys = { "pk_IslemTip", "pk_EvrakNo", "pk_EvrakTarih", "pk_HesapKod", "pk_KynkEvrakTip" };
-        string[] info_IdentityKeys = { "ROW_ID" };
-
-        List<string> ChangedProperties = new List<string>();
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void AcceptChanges() => ChangedProperties.Clear();
-
-        void MFK_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void MFK_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (!ChangedProperties.Contains(e.PropertyName))
             {
@@ -717,14 +676,13 @@ namespace Birikim.Models.Finsat
             }
         }
 
-        void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
     }
 
 }

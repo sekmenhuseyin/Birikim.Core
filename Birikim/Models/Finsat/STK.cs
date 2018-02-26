@@ -243,828 +243,362 @@ namespace Birikim.Models.Finsat
 
     public class STK : INotifyPropertyChanged
     {
+        private short _AF1Birim;
+        private string _AF1DovizCinsi;
+        private short _AF1KDV;
+        private short _AF2Birim;
+        private string _AF2DovizCinsi;
+        private short _AF2KDV;
+        private short _AF3Birim;
+        private string _AF3DovizCinsi;
+        private short _AF3KDV;
+        private string _AlimdanIade;
+        private string _AlimlarHesabi;
+        private decimal _AlimSiparis;
+        private decimal _AlisFiyat1;
+        private decimal _AlisFiyat2;
+        private decimal _AlisFiyat3;
+        private decimal _AzamiStok;
+        private short _BakGostSekli;
+        private string _BarKod1;
+        private string _BarKod2;
+        private string _BarKod3;
+        private string _Birim1;
+        private string _Birim2;
+        private string _Birim3;
+        private decimal _BlkMiktar;
+        private string _ButceKodu;
+        private short _CheckSum;
+        private decimal _CikIskonto;
+        private decimal _CikKonsinye;
+        private decimal _CikMiktar;
+        private decimal _CikRezervasyon;
+        private int _CikTarih;
+        private decimal _CikTutar;
+        private short _DagZinSitList;
+        private short _DagZinSitListAdi;
+        private short _DegisKaynak;
+        private int _DegisSaat;
+        private string _DegisSurum;
+        private int _DegisTarih;
+        private string _Degistiren;
+        private string _DemirbasKodu;
+        private short _DovizAF1Birim;
+        private short _DovizAF1KDV;
+        private short _DovizAF2Birim;
+        private short _DovizAF2KDV;
+        private short _DovizAF3Birim;
+        private short _DovizAF3KDV;
+        private decimal _DovizAlisFiyat1;
+        private decimal _DovizAlisFiyat2;
+        private decimal _DovizAlisFiyat3;
+        private string _DovizCinsi;
+        private decimal _DovizSatisFiyat1;
+        private decimal _DovizSatisFiyat2;
+        private decimal _DovizSatisFiyat3;
+        private short _DovizSF1Birim;
+        private short _DovizSF1KDV;
+        private short _DovizSF2Birim;
+        private short _DovizSF2KDV;
+        private short _DovizSF3Birim;
+        private short _DovizSF3KDV;
+        private decimal _DvrMiktar;
+        private int _DvrTarih;
+        private decimal _DvrTutar;
+        private decimal _DvzCikIskTutar;
+        private decimal _DvzCikTutar;
+        private decimal _DvzDvrTutar;
+        private decimal _DvzGirIskTutar;
+        private decimal _DvzGirTutar;
+        private short _ElekTicSitList;
+        private short _ElekTicSitListAdi;
+        private float _Fire;
+        private string _FireliMalKodu;
+        private decimal _GirIskonto;
+        private decimal _GirKonsinye;
+        private decimal _GirMiktar;
+        private decimal _GirRezervasyon;
+        private int _GirTarih;
+        private decimal _GirTutar;
+        private string _GrupKod;
+        private decimal _GumrukFon;
+        private string _GumrukGTIPN;
+        private float _GumrukVergi;
+        private string _GuvenlikKod;
+        private float _IskontoOran;
+        private short _KartTip;
+        private short _KartTuru;
+        private double _KatSayi2;
+        private double _KatSayi3;
+        private string _Kaydeden;
+        private short _KayitKaynak;
+        private int _KayitSaat;
+        private string _KayitSurum;
+        private int _KayitTarih;
+        private float _KDVOran;
+        private string _Kod1;
+        private short _Kod10;
+        private short _Kod11;
+        private decimal _Kod12;
+        private decimal _Kod13;
+        private string _Kod2;
+        private string _Kod3;
+        private string _Kod4;
+        private decimal _Kod5;
+        private decimal _Kod6;
+        private string _Kod7;
+        private string _Kod8;
+        private string _Kod9;
+        private decimal _KritikStok;
+        private string _MalAdi;
+        private string _MalAdi2;
+        private string _MalAdi3;
+        private string _MalAdi4;
+        private string _MalAdi5;
+        private string _MalKodu;
+        private string _MalKodu2;
+        private string _MasrafMerkezi;
+        private short _MiktarTakibi;
+        private short _MKDS;
+        private short _MlySekli;
+        private string _Nesne1;
+        private string _Nesne2;
+        private string _Nesne3;
+        private string _Notlar;
+        private short _Operator2;
+        private short _Operator3;
+        private string _OzelKod;
+        private string _pk_MalKodu;
+        private int _Row_ID;
+        private decimal _SatisFiyat1;
+        private decimal _SatisFiyat2;
+        private decimal _SatisFiyat3;
+        private decimal _SatisFiyat4;
+        private decimal _SatisFiyat5;
+        private decimal _SatisFiyat6;
+        private decimal _SatisFiyatAltLimit;
+        private short _SatisFiyatTip;
+        private decimal _SatisFiyatUstLimit;
+        private string _SatislarHesabi;
+        private decimal _SatisSiparis;
+        private string _SatistanIade;
+        private short _SF1Birim;
+        private string _SF1DovizCinsi;
+        private short _SF1DvzValorGun;
+        private short _SF1KDV;
+        private short _SF1ValorGun;
+        private short _SF2Birim;
+        private string _SF2DovizCinsi;
+        private short _SF2DvzValorGun;
+        private short _SF2KDV;
+        private short _SF2ValorGun;
+        private short _SF3Birim;
+        private string _SF3DovizCinsi;
+        private short _SF3DvzValorGun;
+        private short _SF3KDV;
+        private short _SF3ValorGun;
+        private short _SF4Birim;
+        private string _SF4DovizCinsi;
+        private short _SF4KDV;
+        private short _SF4ValorGun;
+        private short _SF5Birim;
+        private string _SF5DovizCinsi;
+        private short _SF5KDV;
+        private short _SF5ValorGun;
+        private short _SF6Birim;
+        private string _SF6DovizCinsi;
+        private short _SF6KDV;
+        private short _SF6ValorGun;
+        private short _SirIciSipSitList;
+        private short _SirIciSipSitListAdi;
+        private string _SirketWebAdres;
+        private decimal _SonAlimBF;
+        private string _SonAlimCHK;
+        private string _SonAlimEvrakNo;
+        private int _SonAlimFatTarih;
+        private decimal _SonMlyBirimFiyat;
+        private short _SonMlySekli;
+        private int _SonMlyTarih;
+        private decimal _SonSayimFark;
+        private decimal _SonSayimSonuc;
+        private int _SonSayimTarih;
+        private decimal _TahminiStok;
+        private short _TeminSuresi;
+        private string _TeminYeri;
+        private byte[] _timestamp;
+        private string _TipKod;
+        private string _UreticiKodu;
+        private short _UseAlimIrsFat;
+        private short _UseAlimRezervasyon;
+        private short _UseAlimSiparis;
+        private short _UseCikisIslem;
+        private short _UseGirisIslem;
+        private short _UseSatFatIrs;
+        private short _UseSatRezervasyon;
+        private short _UseSatSiparis;
+        private short _UseSetUrun;
+        private short _ValorGun;
+        private short _WebMagSitList;
+        private short _WebMagSitListAdi;
+        private List<string> ChangedProperties = new List<string>();
 
-        string malKodu;
-        string malAdi;
-        string malAdi2;
-        string malAdi3;
-        string malAdi4;
-        string malAdi5;
-        string grupKod;
-        string sirketWebAdres;
-        string ozelKod;
-        string tipKod;
-        string barKod1;
-        string barKod2;
-        string barKod3;
-        string kod1;
-        string kod2;
-        string kod3;
-        string kod4;
-        decimal kod5;
-        decimal kod6;
-        string kod7;
-        string kod8;
-        string kod9;
-        short kod10;
-        short kod11;
-        decimal kod12;
-        decimal kod13;
-        string dovizCinsi;
-        string malKodu2;
-        string birim1;
-        string birim2;
-        string birim3;
-        short operator2;
-        short operator3;
-        double katSayi2;
-        double katSayi3;
-        string ureticiKodu;
-        string fireliMalKodu;
-        short mlySekli;
-        short mKDS;
-        short valorGun;
-        float iskontoOran;
-        float kDVOran;
-        float fire;
-        string teminYeri;
-        short teminSuresi;
-        decimal kritikStok;
-        decimal azamiStok;
-        decimal tahminiStok;
-        string satislarHesabi;
-        string alimlarHesabi;
-        string satistanIade;
-        string alimdanIade;
-        string masrafMerkezi;
-        decimal alisFiyat1;
-        decimal alisFiyat2;
-        decimal alisFiyat3;
-        decimal dovizAlisFiyat1;
-        decimal dovizAlisFiyat2;
-        decimal dovizAlisFiyat3;
-        string aF1DovizCinsi;
-        string aF2DovizCinsi;
-        string aF3DovizCinsi;
-        short aF1KDV;
-        short aF2KDV;
-        short aF3KDV;
-        short dovizAF1KDV;
-        short dovizAF2KDV;
-        short dovizAF3KDV;
-        short aF1Birim;
-        short aF2Birim;
-        short aF3Birim;
-        short dovizAF1Birim;
-        short dovizAF2Birim;
-        short dovizAF3Birim;
-        decimal satisFiyat1;
-        decimal satisFiyat2;
-        decimal satisFiyat3;
-        decimal satisFiyat4;
-        decimal satisFiyat5;
-        decimal satisFiyat6;
-        decimal dovizSatisFiyat1;
-        decimal dovizSatisFiyat2;
-        decimal dovizSatisFiyat3;
-        string sF1DovizCinsi;
-        string sF2DovizCinsi;
-        string sF3DovizCinsi;
-        string sF4DovizCinsi;
-        string sF5DovizCinsi;
-        string sF6DovizCinsi;
-        short sF1KDV;
-        short sF2KDV;
-        short sF3KDV;
-        short sF4KDV;
-        short sF5KDV;
-        short sF6KDV;
-        short dovizSF1KDV;
-        short dovizSF2KDV;
-        short dovizSF3KDV;
-        short sF1Birim;
-        short sF2Birim;
-        short sF3Birim;
-        short sF4Birim;
-        short sF5Birim;
-        short sF6Birim;
-        short dovizSF1Birim;
-        short dovizSF2Birim;
-        short dovizSF3Birim;
-        int dvrTarih;
-        decimal dvrMiktar;
-        decimal dvrTutar;
-        decimal girMiktar;
-        decimal girTutar;
-        decimal girIskonto;
-        int girTarih;
-        decimal cikMiktar;
-        decimal cikTutar;
-        decimal cikIskonto;
-        int cikTarih;
-        decimal dvzDvrTutar;
-        decimal dvzGirTutar;
-        decimal dvzGirIskTutar;
-        decimal dvzCikTutar;
-        decimal dvzCikIskTutar;
-        short sonMlySekli;
-        decimal sonMlyBirimFiyat;
-        int sonMlyTarih;
-        int sonAlimFatTarih;
-        string sonAlimEvrakNo;
-        decimal sonAlimBF;
-        string sonAlimCHK;
-        decimal alimSiparis;
-        decimal satisSiparis;
-        decimal gumrukFon;
-        string gumrukGTIPN;
-        float gumrukVergi;
-        decimal girRezervasyon;
-        decimal cikRezervasyon;
-        decimal girKonsinye;
-        decimal cikKonsinye;
-        string nesne1;
-        string nesne2;
-        string nesne3;
-        string butceKodu;
-        short kartTuru;
-        short useSatRezervasyon;
-        short useSatSiparis;
-        short useSatFatIrs;
-        short useCikisIslem;
-        short useSetUrun;
-        short useAlimRezervasyon;
-        short useAlimSiparis;
-        short useAlimIrsFat;
-        short useGirisIslem;
-        short sF1ValorGun;
-        short sF2ValorGun;
-        short sF3ValorGun;
-        short sF4ValorGun;
-        short sF5ValorGun;
-        short sF6ValorGun;
-        short sF1DvzValorGun;
-        short sF2DvzValorGun;
-        short sF3DvzValorGun;
-        short satisFiyatTip;
-        decimal satisFiyatAltLimit;
-        decimal satisFiyatUstLimit;
-        int sonSayimTarih;
-        decimal sonSayimSonuc;
-        decimal sonSayimFark;
-        string notlar;
-        decimal blkMiktar;
-        short elekTicSitList;
-        short webMagSitList;
-        short dagZinSitList;
-        short sirIciSipSitList;
-        short elekTicSitListAdi;
-        short webMagSitListAdi;
-        short dagZinSitListAdi;
-        short sirIciSipSitListAdi;
-        string demirbasKodu;
-        short miktarTakibi;
-        short bakGostSekli;
-        short kartTip;
-        string guvenlikKod;
-        string kaydeden;
-        int kayitTarih;
-        int kayitSaat;
-        short kayitKaynak;
-        string kayitSurum;
-        string degistiren;
-        int degisTarih;
-        int degisSaat;
-        short degisKaynak;
-        string degisSurum;
-        short checkSum;
-        decimal alimTeklif;
-        decimal satisTeklif;
-        string satMalMaliyetHesap;
-        short aktifPasif;
-        short tevfikatOran;
-        decimal sonAlimNetBF;
-        decimal sonAlimDvzBF;
-        decimal sonAlimDvzNetBF;
-        string yDAlimlarHesabi;
-        string tevkifatAlis;
-        string tevkifatSatis;
-        string tevkifatAlisTam;
-        string kod14;
-        string kod15;
-        string kod16;
-        string kod17;
-        string kod18;
-        string birim4;
-        short operator4;
-        double katSayi4;
-        decimal en;
-        decimal boy;
-        decimal genislik;
-        string boyutBirim;
-        decimal brutAgirlik;
-        decimal netAgirlik;
-        string birimAgirlik;
-        decimal brutHacim;
-        decimal netHacim;
-        string birimHacim;
-        short yOKCPLUGonder;
-        short yOKCDepartmanID;
-        int yOKCPLUID;
-        int rOW_ID;
-        byte[] _timestamp;
-        string _pk_MalKodu;
+        private string info_FullTableName = "FINSAT6{0}.FINSAT6{0}.STK";
 
-        /// <summary> VARCHAR (30) PrimaryKey * </summary>
-        public string MalKodu
+        private string[] info_IdentityKeys = { "Row_ID" };
+
+        private string[] info_PrimaryKeys = { "pk_MalKodu" };
+
+        private List<string> SetList = new List<string>();
+
+        private List<string> WhereList = new List<string>();
+
+        public STK()
         {
-            get { return malKodu; }
-            set
-            {
-                malKodu = value;
-                OnPropertyChanged("MalKodu");
-            }
+            ChangedProperties = new List<string>();
+            this.PropertyChanged += STK_PropertyChanged;
         }
 
-        /// <summary> VARCHAR (50) * </summary>
-        public string MalAdi
-        {
-            get { return malAdi; }
-            set
-            {
-                malAdi = value;
-                OnPropertyChanged("MalAdi");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string MalAdi2
-        {
-            get { return malAdi2; }
-            set
-            {
-                malAdi2 = value;
-                OnPropertyChanged("MalAdi2");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string MalAdi3
-        {
-            get { return malAdi3; }
-            set
-            {
-                malAdi3 = value;
-                OnPropertyChanged("MalAdi3");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string MalAdi4
-        {
-            get { return malAdi4; }
-            set
-            {
-                malAdi4 = value;
-                OnPropertyChanged("MalAdi4");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string MalAdi5
-        {
-            get { return malAdi5; }
-            set
-            {
-                malAdi5 = value;
-                OnPropertyChanged("MalAdi5");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string GrupKod
-        {
-            get { return grupKod; }
-            set
-            {
-                grupKod = value;
-                OnPropertyChanged("GrupKod");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string SirketWebAdres
-        {
-            get { return sirketWebAdres; }
-            set
-            {
-                sirketWebAdres = value;
-                OnPropertyChanged("SirketWebAdres");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string OzelKod
-        {
-            get { return ozelKod; }
-            set
-            {
-                ozelKod = value;
-                OnPropertyChanged("OzelKod");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string TipKod
-        {
-            get { return tipKod; }
-            set
-            {
-                tipKod = value;
-                OnPropertyChanged("TipKod");
-            }
-        }
-
-        /// <summary> VARCHAR (52) * </summary>
-        public string BarKod1
-        {
-            get { return barKod1; }
-            set
-            {
-                barKod1 = value;
-                OnPropertyChanged("BarKod1");
-            }
-        }
-
-        /// <summary> VARCHAR (52) * </summary>
-        public string BarKod2
-        {
-            get { return barKod2; }
-            set
-            {
-                barKod2 = value;
-                OnPropertyChanged("BarKod2");
-            }
-        }
-
-        /// <summary> VARCHAR (52) * </summary>
-        public string BarKod3
-        {
-            get { return barKod3; }
-            set
-            {
-                barKod3 = value;
-                OnPropertyChanged("BarKod3");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod1
-        {
-            get { return kod1; }
-            set
-            {
-                kod1 = value;
-                OnPropertyChanged("Kod1");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod2
-        {
-            get { return kod2; }
-            set
-            {
-                kod2 = value;
-                OnPropertyChanged("Kod2");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod3
-        {
-            get { return kod3; }
-            set
-            {
-                kod3 = value;
-                OnPropertyChanged("Kod3");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod4
-        {
-            get { return kod4; }
-            set
-            {
-                kod4 = value;
-                OnPropertyChanged("Kod4");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Kod5
-        {
-            get { return kod5; }
-            set
-            {
-                kod5 = value;
-                OnPropertyChanged("Kod5");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Kod6
-        {
-            get { return kod6; }
-            set
-            {
-                kod6 = value;
-                OnPropertyChanged("Kod6");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod7
-        {
-            get { return kod7; }
-            set
-            {
-                kod7 = value;
-                OnPropertyChanged("Kod7");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod8
-        {
-            get { return kod8; }
-            set
-            {
-                kod8 = value;
-                OnPropertyChanged("Kod8");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod9
-        {
-            get { return kod9; }
-            set
-            {
-                kod9 = value;
-                OnPropertyChanged("Kod9");
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary> SMALLINT (2) * </summary>
-        public short Kod10
+        public short AF1Birim
         {
-            get { return kod10; }
+            get { return this._AF1Birim; }
             set
             {
-                kod10 = value;
-                OnPropertyChanged("Kod10");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short Kod11
-        {
-            get { return kod11; }
-            set
-            {
-                kod11 = value;
-                OnPropertyChanged("Kod11");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Kod12
-        {
-            get { return kod12; }
-            set
-            {
-                kod12 = value;
-                OnPropertyChanged("Kod12");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Kod13
-        {
-            get { return kod13; }
-            set
-            {
-                kod13 = value;
-                OnPropertyChanged("Kod13");
+                this._AF1Birim = value;
+                OnPropertyChanged("AF1Birim");
             }
         }
 
         /// <summary> VARCHAR (3) * </summary>
-        public string DovizCinsi
+        public string AF1DovizCinsi
         {
-            get { return dovizCinsi; }
+            get { return this._AF1DovizCinsi; }
             set
             {
-                dovizCinsi = value;
-                OnPropertyChanged("DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (30) * </summary>
-        public string MalKodu2
-        {
-            get { return malKodu2; }
-            set
-            {
-                malKodu2 = value;
-                OnPropertyChanged("MalKodu2");
-            }
-        }
-
-        /// <summary> VARCHAR (4) * </summary>
-        public string Birim1
-        {
-            get { return birim1; }
-            set
-            {
-                birim1 = value;
-                OnPropertyChanged("Birim1");
-            }
-        }
-
-        /// <summary> VARCHAR (4) * </summary>
-        public string Birim2
-        {
-            get { return birim2; }
-            set
-            {
-                birim2 = value;
-                OnPropertyChanged("Birim2");
-            }
-        }
-
-        /// <summary> VARCHAR (4) * </summary>
-        public string Birim3
-        {
-            get { return birim3; }
-            set
-            {
-                birim3 = value;
-                OnPropertyChanged("Birim3");
+                this._AF1DovizCinsi = value;
+                OnPropertyChanged("AF1DovizCinsi");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short Operator2
+        public short AF1KDV
         {
-            get { return operator2; }
+            get { return this._AF1KDV; }
             set
             {
-                operator2 = value;
-                OnPropertyChanged("Operator2");
+                this._AF1KDV = value;
+                OnPropertyChanged("AF1KDV");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short Operator3
+        public short AF2Birim
         {
-            get { return operator3; }
+            get { return this._AF2Birim; }
             set
             {
-                operator3 = value;
-                OnPropertyChanged("Operator3");
+                this._AF2Birim = value;
+                OnPropertyChanged("AF2Birim");
             }
         }
 
-        /// <summary> FLOAT (8) * </summary>
-        public double KatSayi2
+        /// <summary> VARCHAR (3) * </summary>
+        public string AF2DovizCinsi
         {
-            get { return katSayi2; }
+            get { return this._AF2DovizCinsi; }
             set
             {
-                katSayi2 = value;
-                OnPropertyChanged("KatSayi2");
-            }
-        }
-
-        /// <summary> FLOAT (8) * </summary>
-        public double KatSayi3
-        {
-            get { return katSayi3; }
-            set
-            {
-                katSayi3 = value;
-                OnPropertyChanged("KatSayi3");
-            }
-        }
-
-        /// <summary> VARCHAR (30) * </summary>
-        public string UreticiKodu
-        {
-            get { return ureticiKodu; }
-            set
-            {
-                ureticiKodu = value;
-                OnPropertyChanged("UreticiKodu");
-            }
-        }
-
-        /// <summary> VARCHAR (30) * </summary>
-        public string FireliMalKodu
-        {
-            get { return fireliMalKodu; }
-            set
-            {
-                fireliMalKodu = value;
-                OnPropertyChanged("FireliMalKodu");
+                this._AF2DovizCinsi = value;
+                OnPropertyChanged("AF2DovizCinsi");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short MlySekli
+        public short AF2KDV
         {
-            get { return mlySekli; }
+            get { return this._AF2KDV; }
             set
             {
-                mlySekli = value;
-                OnPropertyChanged("MlySekli");
+                this._AF2KDV = value;
+                OnPropertyChanged("AF2KDV");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short MKDS
+        public short AF3Birim
         {
-            get { return mKDS; }
+            get { return this._AF3Birim; }
             set
             {
-                mKDS = value;
-                OnPropertyChanged("MKDS");
+                this._AF3Birim = value;
+                OnPropertyChanged("AF3Birim");
+            }
+        }
+
+        /// <summary> VARCHAR (3) * </summary>
+        public string AF3DovizCinsi
+        {
+            get { return this._AF3DovizCinsi; }
+            set
+            {
+                this._AF3DovizCinsi = value;
+                OnPropertyChanged("AF3DovizCinsi");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short ValorGun
+        public short AF3KDV
         {
-            get { return valorGun; }
+            get { return this._AF3KDV; }
             set
             {
-                valorGun = value;
-                OnPropertyChanged("ValorGun");
-            }
-        }
-
-        /// <summary> REAL (4) * </summary>
-        public float IskontoOran
-        {
-            get { return iskontoOran; }
-            set
-            {
-                iskontoOran = value;
-                OnPropertyChanged("IskontoOran");
-            }
-        }
-
-        /// <summary> REAL (4) * </summary>
-        public float KDVOran
-        {
-            get { return kDVOran; }
-            set
-            {
-                kDVOran = value;
-                OnPropertyChanged("KDVOran");
-            }
-        }
-
-        /// <summary> REAL (4) * </summary>
-        public float Fire
-        {
-            get { return fire; }
-            set
-            {
-                fire = value;
-                OnPropertyChanged("Fire");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string TeminYeri
-        {
-            get { return teminYeri; }
-            set
-            {
-                teminYeri = value;
-                OnPropertyChanged("TeminYeri");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short TeminSuresi
-        {
-            get { return teminSuresi; }
-            set
-            {
-                teminSuresi = value;
-                OnPropertyChanged("TeminSuresi");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal KritikStok
-        {
-            get { return kritikStok; }
-            set
-            {
-                kritikStok = value;
-                OnPropertyChanged("KritikStok");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal AzamiStok
-        {
-            get { return azamiStok; }
-            set
-            {
-                azamiStok = value;
-                OnPropertyChanged("AzamiStok");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal TahminiStok
-        {
-            get { return tahminiStok; }
-            set
-            {
-                tahminiStok = value;
-                OnPropertyChanged("TahminiStok");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string SatislarHesabi
-        {
-            get { return satislarHesabi; }
-            set
-            {
-                satislarHesabi = value;
-                OnPropertyChanged("SatislarHesabi");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string AlimlarHesabi
-        {
-            get { return alimlarHesabi; }
-            set
-            {
-                alimlarHesabi = value;
-                OnPropertyChanged("AlimlarHesabi");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string SatistanIade
-        {
-            get { return satistanIade; }
-            set
-            {
-                satistanIade = value;
-                OnPropertyChanged("SatistanIade");
+                this._AF3KDV = value;
+                OnPropertyChanged("AF3KDV");
             }
         }
 
         /// <summary> VARCHAR (50) * </summary>
         public string AlimdanIade
         {
-            get { return alimdanIade; }
+            get { return this._AlimdanIade; }
             set
             {
-                alimdanIade = value;
+                this._AlimdanIade = value;
                 OnPropertyChanged("AlimdanIade");
             }
         }
 
-        /// <summary> VARCHAR (20) * </summary>
-        public string MasrafMerkezi
+        /// <summary> VARCHAR (50) * </summary>
+        public string AlimlarHesabi
         {
-            get { return masrafMerkezi; }
+            get { return this._AlimlarHesabi; }
             set
             {
-                masrafMerkezi = value;
-                OnPropertyChanged("MasrafMerkezi");
+                this._AlimlarHesabi = value;
+                OnPropertyChanged("AlimlarHesabi");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal AlimSiparis
+        {
+            get { return this._AlimSiparis; }
+            set
+            {
+                this._AlimSiparis = value;
+                OnPropertyChanged("AlimSiparis");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
         public decimal AlisFiyat1
         {
-            get { return alisFiyat1; }
+            get { return this._AlisFiyat1; }
             set
             {
-                alisFiyat1 = value;
+                this._AlisFiyat1 = value;
                 OnPropertyChanged("AlisFiyat1");
             }
         }
@@ -1072,10 +606,10 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal AlisFiyat2
         {
-            get { return alisFiyat2; }
+            get { return this._AlisFiyat2; }
             set
             {
-                alisFiyat2 = value;
+                this._AlisFiyat2 = value;
                 OnPropertyChanged("AlisFiyat2");
             }
         }
@@ -1083,21 +617,362 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal AlisFiyat3
         {
-            get { return alisFiyat3; }
+            get { return this._AlisFiyat3; }
             set
             {
-                alisFiyat3 = value;
+                this._AlisFiyat3 = value;
                 OnPropertyChanged("AlisFiyat3");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal AzamiStok
+        {
+            get { return this._AzamiStok; }
+            set
+            {
+                this._AzamiStok = value;
+                OnPropertyChanged("AzamiStok");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short BakGostSekli
+        {
+            get { return this._BakGostSekli; }
+            set
+            {
+                this._BakGostSekli = value;
+                OnPropertyChanged("BakGostSekli");
+            }
+        }
+
+        /// <summary> VARCHAR (52) * </summary>
+        public string BarKod1
+        {
+            get { return this._BarKod1; }
+            set
+            {
+                this._BarKod1 = value;
+                OnPropertyChanged("BarKod1");
+            }
+        }
+
+        /// <summary> VARCHAR (52) * </summary>
+        public string BarKod2
+        {
+            get { return this._BarKod2; }
+            set
+            {
+                this._BarKod2 = value;
+                OnPropertyChanged("BarKod2");
+            }
+        }
+
+        /// <summary> VARCHAR (52) * </summary>
+        public string BarKod3
+        {
+            get { return this._BarKod3; }
+            set
+            {
+                this._BarKod3 = value;
+                OnPropertyChanged("BarKod3");
+            }
+        }
+
+        /// <summary> VARCHAR (4) * </summary>
+        public string Birim1
+        {
+            get { return this._Birim1; }
+            set
+            {
+                this._Birim1 = value;
+                OnPropertyChanged("Birim1");
+            }
+        }
+
+        /// <summary> VARCHAR (4) * </summary>
+        public string Birim2
+        {
+            get { return this._Birim2; }
+            set
+            {
+                this._Birim2 = value;
+                OnPropertyChanged("Birim2");
+            }
+        }
+
+        /// <summary> VARCHAR (4) * </summary>
+        public string Birim3
+        {
+            get { return this._Birim3; }
+            set
+            {
+                this._Birim3 = value;
+                OnPropertyChanged("Birim3");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal BlkMiktar
+        {
+            get { return this._BlkMiktar; }
+            set
+            {
+                this._BlkMiktar = value;
+                OnPropertyChanged("BlkMiktar");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string ButceKodu
+        {
+            get { return this._ButceKodu; }
+            set
+            {
+                this._ButceKodu = value;
+                OnPropertyChanged("ButceKodu");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short CheckSum
+        {
+            get { return this._CheckSum; }
+            set
+            {
+                this._CheckSum = value;
+                OnPropertyChanged("CheckSum");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal CikIskonto
+        {
+            get { return this._CikIskonto; }
+            set
+            {
+                this._CikIskonto = value;
+                OnPropertyChanged("CikIskonto");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal CikKonsinye
+        {
+            get { return this._CikKonsinye; }
+            set
+            {
+                this._CikKonsinye = value;
+                OnPropertyChanged("CikKonsinye");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal CikMiktar
+        {
+            get { return this._CikMiktar; }
+            set
+            {
+                this._CikMiktar = value;
+                OnPropertyChanged("CikMiktar");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal CikRezervasyon
+        {
+            get { return this._CikRezervasyon; }
+            set
+            {
+                this._CikRezervasyon = value;
+                OnPropertyChanged("CikRezervasyon");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int CikTarih
+        {
+            get { return this._CikTarih; }
+            set
+            {
+                this._CikTarih = value;
+                OnPropertyChanged("CikTarih");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal CikTutar
+        {
+            get { return this._CikTutar; }
+            set
+            {
+                this._CikTutar = value;
+                OnPropertyChanged("CikTutar");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DagZinSitList
+        {
+            get { return this._DagZinSitList; }
+            set
+            {
+                this._DagZinSitList = value;
+                OnPropertyChanged("DagZinSitList");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DagZinSitListAdi
+        {
+            get { return this._DagZinSitListAdi; }
+            set
+            {
+                this._DagZinSitListAdi = value;
+                OnPropertyChanged("DagZinSitListAdi");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DegisKaynak
+        {
+            get { return this._DegisKaynak; }
+            set
+            {
+                this._DegisKaynak = value;
+                OnPropertyChanged("DegisKaynak");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int DegisSaat
+        {
+            get { return this._DegisSaat; }
+            set
+            {
+                this._DegisSaat = value;
+                OnPropertyChanged("DegisSaat");
+            }
+        }
+
+        /// <summary> VARCHAR (12) * </summary>
+        public string DegisSurum
+        {
+            get { return this._DegisSurum; }
+            set
+            {
+                this._DegisSurum = value;
+                OnPropertyChanged("DegisSurum");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int DegisTarih
+        {
+            get { return this._DegisTarih; }
+            set
+            {
+                this._DegisTarih = value;
+                OnPropertyChanged("DegisTarih");
+            }
+        }
+
+        /// <summary> VARCHAR (5) * </summary>
+        public string Degistiren
+        {
+            get { return this._Degistiren; }
+            set
+            {
+                this._Degistiren = value;
+                OnPropertyChanged("Degistiren");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string DemirbasKodu
+        {
+            get { return this._DemirbasKodu; }
+            set
+            {
+                this._DemirbasKodu = value;
+                OnPropertyChanged("DemirbasKodu");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizAF1Birim
+        {
+            get { return this._DovizAF1Birim; }
+            set
+            {
+                this._DovizAF1Birim = value;
+                OnPropertyChanged("DovizAF1Birim");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizAF1KDV
+        {
+            get { return this._DovizAF1KDV; }
+            set
+            {
+                this._DovizAF1KDV = value;
+                OnPropertyChanged("DovizAF1KDV");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizAF2Birim
+        {
+            get { return this._DovizAF2Birim; }
+            set
+            {
+                this._DovizAF2Birim = value;
+                OnPropertyChanged("DovizAF2Birim");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizAF2KDV
+        {
+            get { return this._DovizAF2KDV; }
+            set
+            {
+                this._DovizAF2KDV = value;
+                OnPropertyChanged("DovizAF2KDV");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizAF3Birim
+        {
+            get { return this._DovizAF3Birim; }
+            set
+            {
+                this._DovizAF3Birim = value;
+                OnPropertyChanged("DovizAF3Birim");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizAF3KDV
+        {
+            get { return this._DovizAF3KDV; }
+            set
+            {
+                this._DovizAF3KDV = value;
+                OnPropertyChanged("DovizAF3KDV");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
         public decimal DovizAlisFiyat1
         {
-            get { return dovizAlisFiyat1; }
+            get { return this._DovizAlisFiyat1; }
             set
             {
-                dovizAlisFiyat1 = value;
+                this._DovizAlisFiyat1 = value;
                 OnPropertyChanged("DovizAlisFiyat1");
             }
         }
@@ -1105,10 +980,10 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal DovizAlisFiyat2
         {
-            get { return dovizAlisFiyat2; }
+            get { return this._DovizAlisFiyat2; }
             set
             {
-                dovizAlisFiyat2 = value;
+                this._DovizAlisFiyat2 = value;
                 OnPropertyChanged("DovizAlisFiyat2");
             }
         }
@@ -1116,252 +991,32 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal DovizAlisFiyat3
         {
-            get { return dovizAlisFiyat3; }
+            get { return this._DovizAlisFiyat3; }
             set
             {
-                dovizAlisFiyat3 = value;
+                this._DovizAlisFiyat3 = value;
                 OnPropertyChanged("DovizAlisFiyat3");
             }
         }
 
         /// <summary> VARCHAR (3) * </summary>
-        public string AF1DovizCinsi
+        public string DovizCinsi
         {
-            get { return aF1DovizCinsi; }
+            get { return this._DovizCinsi; }
             set
             {
-                aF1DovizCinsi = value;
-                OnPropertyChanged("AF1DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string AF2DovizCinsi
-        {
-            get { return aF2DovizCinsi; }
-            set
-            {
-                aF2DovizCinsi = value;
-                OnPropertyChanged("AF2DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string AF3DovizCinsi
-        {
-            get { return aF3DovizCinsi; }
-            set
-            {
-                aF3DovizCinsi = value;
-                OnPropertyChanged("AF3DovizCinsi");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short AF1KDV
-        {
-            get { return aF1KDV; }
-            set
-            {
-                aF1KDV = value;
-                OnPropertyChanged("AF1KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short AF2KDV
-        {
-            get { return aF2KDV; }
-            set
-            {
-                aF2KDV = value;
-                OnPropertyChanged("AF2KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short AF3KDV
-        {
-            get { return aF3KDV; }
-            set
-            {
-                aF3KDV = value;
-                OnPropertyChanged("AF3KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizAF1KDV
-        {
-            get { return dovizAF1KDV; }
-            set
-            {
-                dovizAF1KDV = value;
-                OnPropertyChanged("DovizAF1KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizAF2KDV
-        {
-            get { return dovizAF2KDV; }
-            set
-            {
-                dovizAF2KDV = value;
-                OnPropertyChanged("DovizAF2KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizAF3KDV
-        {
-            get { return dovizAF3KDV; }
-            set
-            {
-                dovizAF3KDV = value;
-                OnPropertyChanged("DovizAF3KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short AF1Birim
-        {
-            get { return aF1Birim; }
-            set
-            {
-                aF1Birim = value;
-                OnPropertyChanged("AF1Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short AF2Birim
-        {
-            get { return aF2Birim; }
-            set
-            {
-                aF2Birim = value;
-                OnPropertyChanged("AF2Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short AF3Birim
-        {
-            get { return aF3Birim; }
-            set
-            {
-                aF3Birim = value;
-                OnPropertyChanged("AF3Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizAF1Birim
-        {
-            get { return dovizAF1Birim; }
-            set
-            {
-                dovizAF1Birim = value;
-                OnPropertyChanged("DovizAF1Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizAF2Birim
-        {
-            get { return dovizAF2Birim; }
-            set
-            {
-                dovizAF2Birim = value;
-                OnPropertyChanged("DovizAF2Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizAF3Birim
-        {
-            get { return dovizAF3Birim; }
-            set
-            {
-                dovizAF3Birim = value;
-                OnPropertyChanged("DovizAF3Birim");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyat1
-        {
-            get { return satisFiyat1; }
-            set
-            {
-                satisFiyat1 = value;
-                OnPropertyChanged("SatisFiyat1");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyat2
-        {
-            get { return satisFiyat2; }
-            set
-            {
-                satisFiyat2 = value;
-                OnPropertyChanged("SatisFiyat2");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyat3
-        {
-            get { return satisFiyat3; }
-            set
-            {
-                satisFiyat3 = value;
-                OnPropertyChanged("SatisFiyat3");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyat4
-        {
-            get { return satisFiyat4; }
-            set
-            {
-                satisFiyat4 = value;
-                OnPropertyChanged("SatisFiyat4");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyat5
-        {
-            get { return satisFiyat5; }
-            set
-            {
-                satisFiyat5 = value;
-                OnPropertyChanged("SatisFiyat5");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyat6
-        {
-            get { return satisFiyat6; }
-            set
-            {
-                satisFiyat6 = value;
-                OnPropertyChanged("SatisFiyat6");
+                this._DovizCinsi = value;
+                OnPropertyChanged("DovizCinsi");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
         public decimal DovizSatisFiyat1
         {
-            get { return dovizSatisFiyat1; }
+            get { return this._DovizSatisFiyat1; }
             set
             {
-                dovizSatisFiyat1 = value;
+                this._DovizSatisFiyat1 = value;
                 OnPropertyChanged("DovizSatisFiyat1");
             }
         }
@@ -1369,10 +1024,10 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal DovizSatisFiyat2
         {
-            get { return dovizSatisFiyat2; }
+            get { return this._DovizSatisFiyat2; }
             set
             {
-                dovizSatisFiyat2 = value;
+                this._DovizSatisFiyat2 = value;
                 OnPropertyChanged("DovizSatisFiyat2");
             }
         }
@@ -1380,560 +1035,296 @@ namespace Birikim.Models.Finsat
         /// <summary> NUMERIC (13) * </summary>
         public decimal DovizSatisFiyat3
         {
-            get { return dovizSatisFiyat3; }
+            get { return this._DovizSatisFiyat3; }
             set
             {
-                dovizSatisFiyat3 = value;
+                this._DovizSatisFiyat3 = value;
                 OnPropertyChanged("DovizSatisFiyat3");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string SF1DovizCinsi
-        {
-            get { return sF1DovizCinsi; }
-            set
-            {
-                sF1DovizCinsi = value;
-                OnPropertyChanged("SF1DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string SF2DovizCinsi
-        {
-            get { return sF2DovizCinsi; }
-            set
-            {
-                sF2DovizCinsi = value;
-                OnPropertyChanged("SF2DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string SF3DovizCinsi
-        {
-            get { return sF3DovizCinsi; }
-            set
-            {
-                sF3DovizCinsi = value;
-                OnPropertyChanged("SF3DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string SF4DovizCinsi
-        {
-            get { return sF4DovizCinsi; }
-            set
-            {
-                sF4DovizCinsi = value;
-                OnPropertyChanged("SF4DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string SF5DovizCinsi
-        {
-            get { return sF5DovizCinsi; }
-            set
-            {
-                sF5DovizCinsi = value;
-                OnPropertyChanged("SF5DovizCinsi");
-            }
-        }
-
-        /// <summary> VARCHAR (3) * </summary>
-        public string SF6DovizCinsi
-        {
-            get { return sF6DovizCinsi; }
-            set
-            {
-                sF6DovizCinsi = value;
-                OnPropertyChanged("SF6DovizCinsi");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF1KDV
-        {
-            get { return sF1KDV; }
-            set
-            {
-                sF1KDV = value;
-                OnPropertyChanged("SF1KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF2KDV
-        {
-            get { return sF2KDV; }
-            set
-            {
-                sF2KDV = value;
-                OnPropertyChanged("SF2KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF3KDV
-        {
-            get { return sF3KDV; }
-            set
-            {
-                sF3KDV = value;
-                OnPropertyChanged("SF3KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF4KDV
-        {
-            get { return sF4KDV; }
-            set
-            {
-                sF4KDV = value;
-                OnPropertyChanged("SF4KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF5KDV
-        {
-            get { return sF5KDV; }
-            set
-            {
-                sF5KDV = value;
-                OnPropertyChanged("SF5KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF6KDV
-        {
-            get { return sF6KDV; }
-            set
-            {
-                sF6KDV = value;
-                OnPropertyChanged("SF6KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizSF1KDV
-        {
-            get { return dovizSF1KDV; }
-            set
-            {
-                dovizSF1KDV = value;
-                OnPropertyChanged("DovizSF1KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizSF2KDV
-        {
-            get { return dovizSF2KDV; }
-            set
-            {
-                dovizSF2KDV = value;
-                OnPropertyChanged("DovizSF2KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DovizSF3KDV
-        {
-            get { return dovizSF3KDV; }
-            set
-            {
-                dovizSF3KDV = value;
-                OnPropertyChanged("DovizSF3KDV");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF1Birim
-        {
-            get { return sF1Birim; }
-            set
-            {
-                sF1Birim = value;
-                OnPropertyChanged("SF1Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF2Birim
-        {
-            get { return sF2Birim; }
-            set
-            {
-                sF2Birim = value;
-                OnPropertyChanged("SF2Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF3Birim
-        {
-            get { return sF3Birim; }
-            set
-            {
-                sF3Birim = value;
-                OnPropertyChanged("SF3Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF4Birim
-        {
-            get { return sF4Birim; }
-            set
-            {
-                sF4Birim = value;
-                OnPropertyChanged("SF4Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF5Birim
-        {
-            get { return sF5Birim; }
-            set
-            {
-                sF5Birim = value;
-                OnPropertyChanged("SF5Birim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF6Birim
-        {
-            get { return sF6Birim; }
-            set
-            {
-                sF6Birim = value;
-                OnPropertyChanged("SF6Birim");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short DovizSF1Birim
         {
-            get { return dovizSF1Birim; }
+            get { return this._DovizSF1Birim; }
             set
             {
-                dovizSF1Birim = value;
+                this._DovizSF1Birim = value;
                 OnPropertyChanged("DovizSF1Birim");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizSF1KDV
+        {
+            get { return this._DovizSF1KDV; }
+            set
+            {
+                this._DovizSF1KDV = value;
+                OnPropertyChanged("DovizSF1KDV");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short DovizSF2Birim
         {
-            get { return dovizSF2Birim; }
+            get { return this._DovizSF2Birim; }
             set
             {
-                dovizSF2Birim = value;
+                this._DovizSF2Birim = value;
                 OnPropertyChanged("DovizSF2Birim");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizSF2KDV
+        {
+            get { return this._DovizSF2KDV; }
+            set
+            {
+                this._DovizSF2KDV = value;
+                OnPropertyChanged("DovizSF2KDV");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short DovizSF3Birim
         {
-            get { return dovizSF3Birim; }
+            get { return this._DovizSF3Birim; }
             set
             {
-                dovizSF3Birim = value;
+                this._DovizSF3Birim = value;
                 OnPropertyChanged("DovizSF3Birim");
             }
         }
 
-        /// <summary> INT (4) * </summary>
-        public int DvrTarih
+        /// <summary> SMALLINT (2) * </summary>
+        public short DovizSF3KDV
         {
-            get { return dvrTarih; }
+            get { return this._DovizSF3KDV; }
             set
             {
-                dvrTarih = value;
-                OnPropertyChanged("DvrTarih");
+                this._DovizSF3KDV = value;
+                OnPropertyChanged("DovizSF3KDV");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
         public decimal DvrMiktar
         {
-            get { return dvrMiktar; }
+            get { return this._DvrMiktar; }
             set
             {
-                dvrMiktar = value;
+                this._DvrMiktar = value;
                 OnPropertyChanged("DvrMiktar");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int DvrTarih
+        {
+            get { return this._DvrTarih; }
+            set
+            {
+                this._DvrTarih = value;
+                OnPropertyChanged("DvrTarih");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
         public decimal DvrTutar
         {
-            get { return dvrTutar; }
+            get { return this._DvrTutar; }
             set
             {
-                dvrTutar = value;
+                this._DvrTutar = value;
                 OnPropertyChanged("DvrTutar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal GirMiktar
-        {
-            get { return girMiktar; }
-            set
-            {
-                girMiktar = value;
-                OnPropertyChanged("GirMiktar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal GirTutar
-        {
-            get { return girTutar; }
-            set
-            {
-                girTutar = value;
-                OnPropertyChanged("GirTutar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal GirIskonto
-        {
-            get { return girIskonto; }
-            set
-            {
-                girIskonto = value;
-                OnPropertyChanged("GirIskonto");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int GirTarih
-        {
-            get { return girTarih; }
-            set
-            {
-                girTarih = value;
-                OnPropertyChanged("GirTarih");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal CikMiktar
-        {
-            get { return cikMiktar; }
-            set
-            {
-                cikMiktar = value;
-                OnPropertyChanged("CikMiktar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal CikTutar
-        {
-            get { return cikTutar; }
-            set
-            {
-                cikTutar = value;
-                OnPropertyChanged("CikTutar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal CikIskonto
-        {
-            get { return cikIskonto; }
-            set
-            {
-                cikIskonto = value;
-                OnPropertyChanged("CikIskonto");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int CikTarih
-        {
-            get { return cikTarih; }
-            set
-            {
-                cikTarih = value;
-                OnPropertyChanged("CikTarih");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal DvzDvrTutar
-        {
-            get { return dvzDvrTutar; }
-            set
-            {
-                dvzDvrTutar = value;
-                OnPropertyChanged("DvzDvrTutar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal DvzGirTutar
-        {
-            get { return dvzGirTutar; }
-            set
-            {
-                dvzGirTutar = value;
-                OnPropertyChanged("DvzGirTutar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal DvzGirIskTutar
-        {
-            get { return dvzGirIskTutar; }
-            set
-            {
-                dvzGirIskTutar = value;
-                OnPropertyChanged("DvzGirIskTutar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal DvzCikTutar
-        {
-            get { return dvzCikTutar; }
-            set
-            {
-                dvzCikTutar = value;
-                OnPropertyChanged("DvzCikTutar");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
         public decimal DvzCikIskTutar
         {
-            get { return dvzCikIskTutar; }
+            get { return this._DvzCikIskTutar; }
             set
             {
-                dvzCikIskTutar = value;
+                this._DvzCikIskTutar = value;
                 OnPropertyChanged("DvzCikIskTutar");
             }
         }
 
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal DvzCikTutar
+        {
+            get { return this._DvzCikTutar; }
+            set
+            {
+                this._DvzCikTutar = value;
+                OnPropertyChanged("DvzCikTutar");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal DvzDvrTutar
+        {
+            get { return this._DvzDvrTutar; }
+            set
+            {
+                this._DvzDvrTutar = value;
+                OnPropertyChanged("DvzDvrTutar");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal DvzGirIskTutar
+        {
+            get { return this._DvzGirIskTutar; }
+            set
+            {
+                this._DvzGirIskTutar = value;
+                OnPropertyChanged("DvzGirIskTutar");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal DvzGirTutar
+        {
+            get { return this._DvzGirTutar; }
+            set
+            {
+                this._DvzGirTutar = value;
+                OnPropertyChanged("DvzGirTutar");
+            }
+        }
+
         /// <summary> SMALLINT (2) * </summary>
-        public short SonMlySekli
+        public short ElekTicSitList
         {
-            get { return sonMlySekli; }
+            get { return this._ElekTicSitList; }
             set
             {
-                sonMlySekli = value;
-                OnPropertyChanged("SonMlySekli");
+                this._ElekTicSitList = value;
+                OnPropertyChanged("ElekTicSitList");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short ElekTicSitListAdi
+        {
+            get { return this._ElekTicSitListAdi; }
+            set
+            {
+                this._ElekTicSitListAdi = value;
+                OnPropertyChanged("ElekTicSitListAdi");
+            }
+        }
+
+        /// <summary> REAL (4) * </summary>
+        public float Fire
+        {
+            get { return this._Fire; }
+            set
+            {
+                this._Fire = value;
+                OnPropertyChanged("Fire");
+            }
+        }
+
+        /// <summary> VARCHAR (30) * </summary>
+        public string FireliMalKodu
+        {
+            get { return this._FireliMalKodu; }
+            set
+            {
+                this._FireliMalKodu = value;
+                OnPropertyChanged("FireliMalKodu");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
-        public decimal SonMlyBirimFiyat
+        public decimal GirIskonto
         {
-            get { return sonMlyBirimFiyat; }
+            get { return this._GirIskonto; }
             set
             {
-                sonMlyBirimFiyat = value;
-                OnPropertyChanged("SonMlyBirimFiyat");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int SonMlyTarih
-        {
-            get { return sonMlyTarih; }
-            set
-            {
-                sonMlyTarih = value;
-                OnPropertyChanged("SonMlyTarih");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int SonAlimFatTarih
-        {
-            get { return sonAlimFatTarih; }
-            set
-            {
-                sonAlimFatTarih = value;
-                OnPropertyChanged("SonAlimFatTarih");
-            }
-        }
-
-        /// <summary> VARCHAR (16) * </summary>
-        public string SonAlimEvrakNo
-        {
-            get { return sonAlimEvrakNo; }
-            set
-            {
-                sonAlimEvrakNo = value;
-                OnPropertyChanged("SonAlimEvrakNo");
+                this._GirIskonto = value;
+                OnPropertyChanged("GirIskonto");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
-        public decimal SonAlimBF
+        public decimal GirKonsinye
         {
-            get { return sonAlimBF; }
+            get { return this._GirKonsinye; }
             set
             {
-                sonAlimBF = value;
-                OnPropertyChanged("SonAlimBF");
+                this._GirKonsinye = value;
+                OnPropertyChanged("GirKonsinye");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal GirMiktar
+        {
+            get { return this._GirMiktar; }
+            set
+            {
+                this._GirMiktar = value;
+                OnPropertyChanged("GirMiktar");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal GirRezervasyon
+        {
+            get { return this._GirRezervasyon; }
+            set
+            {
+                this._GirRezervasyon = value;
+                OnPropertyChanged("GirRezervasyon");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int GirTarih
+        {
+            get { return this._GirTarih; }
+            set
+            {
+                this._GirTarih = value;
+                OnPropertyChanged("GirTarih");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal GirTutar
+        {
+            get { return this._GirTutar; }
+            set
+            {
+                this._GirTutar = value;
+                OnPropertyChanged("GirTutar");
             }
         }
 
         /// <summary> VARCHAR (20) * </summary>
-        public string SonAlimCHK
+        public string GrupKod
         {
-            get { return sonAlimCHK; }
+            get { return this._GrupKod; }
             set
             {
-                sonAlimCHK = value;
-                OnPropertyChanged("SonAlimCHK");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal AlimSiparis
-        {
-            get { return alimSiparis; }
-            set
-            {
-                alimSiparis = value;
-                OnPropertyChanged("AlimSiparis");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisSiparis
-        {
-            get { return satisSiparis; }
-            set
-            {
-                satisSiparis = value;
-                OnPropertyChanged("SatisSiparis");
+                this._GrupKod = value;
+                OnPropertyChanged("GrupKod");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
         public decimal GumrukFon
         {
-            get { return gumrukFon; }
+            get { return this._GumrukFon; }
             set
             {
-                gumrukFon = value;
+                this._GumrukFon = value;
                 OnPropertyChanged("GumrukFon");
             }
         }
@@ -1941,10 +1332,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (30) * </summary>
         public string GumrukGTIPN
         {
-            get { return gumrukGTIPN; }
+            get { return this._GumrukGTIPN; }
             set
             {
-                gumrukGTIPN = value;
+                this._GumrukGTIPN = value;
                 OnPropertyChanged("GumrukGTIPN");
             }
         }
@@ -1952,65 +1343,428 @@ namespace Birikim.Models.Finsat
         /// <summary> REAL (4) * </summary>
         public float GumrukVergi
         {
-            get { return gumrukVergi; }
+            get { return this._GumrukVergi; }
             set
             {
-                gumrukVergi = value;
+                this._GumrukVergi = value;
                 OnPropertyChanged("GumrukVergi");
             }
         }
 
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal GirRezervasyon
+        /// <summary> VARCHAR (2) * </summary>
+        public string GuvenlikKod
         {
-            get { return girRezervasyon; }
+            get { return this._GuvenlikKod; }
             set
             {
-                girRezervasyon = value;
-                OnPropertyChanged("GirRezervasyon");
+                this._GuvenlikKod = value;
+                OnPropertyChanged("GuvenlikKod");
+            }
+        }
+
+        /// <summary> REAL (4) * </summary>
+        public float IskontoOran
+        {
+            get { return this._IskontoOran; }
+            set
+            {
+                this._IskontoOran = value;
+                OnPropertyChanged("IskontoOran");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short KartTip
+        {
+            get { return this._KartTip; }
+            set
+            {
+                this._KartTip = value;
+                OnPropertyChanged("KartTip");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short KartTuru
+        {
+            get { return this._KartTuru; }
+            set
+            {
+                this._KartTuru = value;
+                OnPropertyChanged("KartTuru");
+            }
+        }
+
+        /// <summary> FLOAT (8) * </summary>
+        public double KatSayi2
+        {
+            get { return this._KatSayi2; }
+            set
+            {
+                this._KatSayi2 = value;
+                OnPropertyChanged("KatSayi2");
+            }
+        }
+
+        /// <summary> FLOAT (8) * </summary>
+        public double KatSayi3
+        {
+            get { return this._KatSayi3; }
+            set
+            {
+                this._KatSayi3 = value;
+                OnPropertyChanged("KatSayi3");
+            }
+        }
+
+        /// <summary> VARCHAR (5) * </summary>
+        public string Kaydeden
+        {
+            get { return this._Kaydeden; }
+            set
+            {
+                this._Kaydeden = value;
+                OnPropertyChanged("Kaydeden");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short KayitKaynak
+        {
+            get { return this._KayitKaynak; }
+            set
+            {
+                this._KayitKaynak = value;
+                OnPropertyChanged("KayitKaynak");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int KayitSaat
+        {
+            get { return this._KayitSaat; }
+            set
+            {
+                this._KayitSaat = value;
+                OnPropertyChanged("KayitSaat");
+            }
+        }
+
+        /// <summary> VARCHAR (12) * </summary>
+        public string KayitSurum
+        {
+            get { return this._KayitSurum; }
+            set
+            {
+                this._KayitSurum = value;
+                OnPropertyChanged("KayitSurum");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int KayitTarih
+        {
+            get { return this._KayitTarih; }
+            set
+            {
+                this._KayitTarih = value;
+                OnPropertyChanged("KayitTarih");
+            }
+        }
+
+        /// <summary> REAL (4) * </summary>
+        public float KDVOran
+        {
+            get { return this._KDVOran; }
+            set
+            {
+                this._KDVOran = value;
+                OnPropertyChanged("KDVOran");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Kod1
+        {
+            get { return this._Kod1; }
+            set
+            {
+                this._Kod1 = value;
+                OnPropertyChanged("Kod1");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short Kod10
+        {
+            get { return this._Kod10; }
+            set
+            {
+                this._Kod10 = value;
+                OnPropertyChanged("Kod10");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short Kod11
+        {
+            get { return this._Kod11; }
+            set
+            {
+                this._Kod11 = value;
+                OnPropertyChanged("Kod11");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
-        public decimal CikRezervasyon
+        public decimal Kod12
         {
-            get { return cikRezervasyon; }
+            get { return this._Kod12; }
             set
             {
-                cikRezervasyon = value;
-                OnPropertyChanged("CikRezervasyon");
+                this._Kod12 = value;
+                OnPropertyChanged("Kod12");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
-        public decimal GirKonsinye
+        public decimal Kod13
         {
-            get { return girKonsinye; }
+            get { return this._Kod13; }
             set
             {
-                girKonsinye = value;
-                OnPropertyChanged("GirKonsinye");
+                this._Kod13 = value;
+                OnPropertyChanged("Kod13");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Kod2
+        {
+            get { return this._Kod2; }
+            set
+            {
+                this._Kod2 = value;
+                OnPropertyChanged("Kod2");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Kod3
+        {
+            get { return this._Kod3; }
+            set
+            {
+                this._Kod3 = value;
+                OnPropertyChanged("Kod3");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Kod4
+        {
+            get { return this._Kod4; }
+            set
+            {
+                this._Kod4 = value;
+                OnPropertyChanged("Kod4");
             }
         }
 
         /// <summary> NUMERIC (13) * </summary>
-        public decimal CikKonsinye
+        public decimal Kod5
         {
-            get { return cikKonsinye; }
+            get { return this._Kod5; }
             set
             {
-                cikKonsinye = value;
-                OnPropertyChanged("CikKonsinye");
+                this._Kod5 = value;
+                OnPropertyChanged("Kod5");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal Kod6
+        {
+            get { return this._Kod6; }
+            set
+            {
+                this._Kod6 = value;
+                OnPropertyChanged("Kod6");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Kod7
+        {
+            get { return this._Kod7; }
+            set
+            {
+                this._Kod7 = value;
+                OnPropertyChanged("Kod7");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Kod8
+        {
+            get { return this._Kod8; }
+            set
+            {
+                this._Kod8 = value;
+                OnPropertyChanged("Kod8");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Kod9
+        {
+            get { return this._Kod9; }
+            set
+            {
+                this._Kod9 = value;
+                OnPropertyChanged("Kod9");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal KritikStok
+        {
+            get { return this._KritikStok; }
+            set
+            {
+                this._KritikStok = value;
+                OnPropertyChanged("KritikStok");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string MalAdi
+        {
+            get { return this._MalAdi; }
+            set
+            {
+                this._MalAdi = value;
+                OnPropertyChanged("MalAdi");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string MalAdi2
+        {
+            get { return this._MalAdi2; }
+            set
+            {
+                this._MalAdi2 = value;
+                OnPropertyChanged("MalAdi2");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string MalAdi3
+        {
+            get { return this._MalAdi3; }
+            set
+            {
+                this._MalAdi3 = value;
+                OnPropertyChanged("MalAdi3");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string MalAdi4
+        {
+            get { return this._MalAdi4; }
+            set
+            {
+                this._MalAdi4 = value;
+                OnPropertyChanged("MalAdi4");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string MalAdi5
+        {
+            get { return this._MalAdi5; }
+            set
+            {
+                this._MalAdi5 = value;
+                OnPropertyChanged("MalAdi5");
+            }
+        }
+
+        /// <summary> VARCHAR (30) PrimaryKey * </summary>
+        public string MalKodu
+        {
+            get { return this._MalKodu; }
+            set
+            {
+                this._MalKodu = value;
+                OnPropertyChanged("MalKodu");
+            }
+        }
+
+        /// <summary> VARCHAR (30) * </summary>
+        public string MalKodu2
+        {
+            get { return this._MalKodu2; }
+            set
+            {
+                this._MalKodu2 = value;
+                OnPropertyChanged("MalKodu2");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string MasrafMerkezi
+        {
+            get { return this._MasrafMerkezi; }
+            set
+            {
+                this._MasrafMerkezi = value;
+                OnPropertyChanged("MasrafMerkezi");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short MiktarTakibi
+        {
+            get { return this._MiktarTakibi; }
+            set
+            {
+                this._MiktarTakibi = value;
+                OnPropertyChanged("MiktarTakibi");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short MKDS
+        {
+            get { return this._MKDS; }
+            set
+            {
+                this._MKDS = value;
+                OnPropertyChanged("MKDS");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short MlySekli
+        {
+            get { return this._MlySekli; }
+            set
+            {
+                this._MlySekli = value;
+                OnPropertyChanged("MlySekli");
             }
         }
 
         /// <summary> VARCHAR (254) * </summary>
         public string Nesne1
         {
-            get { return nesne1; }
+            get { return this._Nesne1; }
             set
             {
-                nesne1 = value;
+                this._Nesne1 = value;
                 OnPropertyChanged("Nesne1");
             }
         }
@@ -2018,10 +1772,10 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (254) * </summary>
         public string Nesne2
         {
-            get { return nesne2; }
+            get { return this._Nesne2; }
             set
             {
-                nesne2 = value;
+                this._Nesne2 = value;
                 OnPropertyChanged("Nesne2");
             }
         }
@@ -2029,98 +1783,731 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (254) * </summary>
         public string Nesne3
         {
-            get { return nesne3; }
+            get { return this._Nesne3; }
             set
             {
-                nesne3 = value;
+                this._Nesne3 = value;
                 OnPropertyChanged("Nesne3");
             }
         }
 
+        /// <summary> VARCHAR (64) * </summary>
+        public string Notlar
+        {
+            get { return this._Notlar; }
+            set
+            {
+                this._Notlar = value;
+                OnPropertyChanged("Notlar");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short Operator2
+        {
+            get { return this._Operator2; }
+            set
+            {
+                this._Operator2 = value;
+                OnPropertyChanged("Operator2");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short Operator3
+        {
+            get { return this._Operator3; }
+            set
+            {
+                this._Operator3 = value;
+                OnPropertyChanged("Operator3");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string OzelKod
+        {
+            get { return this._OzelKod; }
+            set
+            {
+                this._OzelKod = value;
+                OnPropertyChanged("OzelKod");
+            }
+        }
+
+        /// <summary> VARCHAR (30) PRIMARY KEY * </summary>
+        public string pk_MalKodu
+        {
+            private get { return this._pk_MalKodu; }
+            set
+            {
+                this._pk_MalKodu = value;
+                OnPropertyChanged("pk_MalKodu");
+            }
+        }
+
+        /// <summary> INT (4) IdentityKey * </summary>
+        public int Row_ID
+        {
+            get { return this._Row_ID; }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyat1
+        {
+            get { return this._SatisFiyat1; }
+            set
+            {
+                this._SatisFiyat1 = value;
+                OnPropertyChanged("SatisFiyat1");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyat2
+        {
+            get { return this._SatisFiyat2; }
+            set
+            {
+                this._SatisFiyat2 = value;
+                OnPropertyChanged("SatisFiyat2");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyat3
+        {
+            get { return this._SatisFiyat3; }
+            set
+            {
+                this._SatisFiyat3 = value;
+                OnPropertyChanged("SatisFiyat3");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyat4
+        {
+            get { return this._SatisFiyat4; }
+            set
+            {
+                this._SatisFiyat4 = value;
+                OnPropertyChanged("SatisFiyat4");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyat5
+        {
+            get { return this._SatisFiyat5; }
+            set
+            {
+                this._SatisFiyat5 = value;
+                OnPropertyChanged("SatisFiyat5");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyat6
+        {
+            get { return this._SatisFiyat6; }
+            set
+            {
+                this._SatisFiyat6 = value;
+                OnPropertyChanged("SatisFiyat6");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyatAltLimit
+        {
+            get { return this._SatisFiyatAltLimit; }
+            set
+            {
+                this._SatisFiyatAltLimit = value;
+                OnPropertyChanged("SatisFiyatAltLimit");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SatisFiyatTip
+        {
+            get { return this._SatisFiyatTip; }
+            set
+            {
+                this._SatisFiyatTip = value;
+                OnPropertyChanged("SatisFiyatTip");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisFiyatUstLimit
+        {
+            get { return this._SatisFiyatUstLimit; }
+            set
+            {
+                this._SatisFiyatUstLimit = value;
+                OnPropertyChanged("SatisFiyatUstLimit");
+            }
+        }
+
         /// <summary> VARCHAR (50) * </summary>
-        public string ButceKodu
+        public string SatislarHesabi
         {
-            get { return butceKodu; }
+            get { return this._SatislarHesabi; }
             set
             {
-                butceKodu = value;
-                OnPropertyChanged("ButceKodu");
+                this._SatislarHesabi = value;
+                OnPropertyChanged("SatislarHesabi");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SatisSiparis
+        {
+            get { return this._SatisSiparis; }
+            set
+            {
+                this._SatisSiparis = value;
+                OnPropertyChanged("SatisSiparis");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string SatistanIade
+        {
+            get { return this._SatistanIade; }
+            set
+            {
+                this._SatistanIade = value;
+                OnPropertyChanged("SatistanIade");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short KartTuru
+        public short SF1Birim
         {
-            get { return kartTuru; }
+            get { return this._SF1Birim; }
             set
             {
-                kartTuru = value;
-                OnPropertyChanged("KartTuru");
+                this._SF1Birim = value;
+                OnPropertyChanged("SF1Birim");
+            }
+        }
+
+        /// <summary> VARCHAR (3) * </summary>
+        public string SF1DovizCinsi
+        {
+            get { return this._SF1DovizCinsi; }
+            set
+            {
+                this._SF1DovizCinsi = value;
+                OnPropertyChanged("SF1DovizCinsi");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short UseSatRezervasyon
+        public short SF1DvzValorGun
         {
-            get { return useSatRezervasyon; }
+            get { return this._SF1DvzValorGun; }
             set
             {
-                useSatRezervasyon = value;
-                OnPropertyChanged("UseSatRezervasyon");
+                this._SF1DvzValorGun = value;
+                OnPropertyChanged("SF1DvzValorGun");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short UseSatSiparis
+        public short SF1KDV
         {
-            get { return useSatSiparis; }
+            get { return this._SF1KDV; }
             set
             {
-                useSatSiparis = value;
-                OnPropertyChanged("UseSatSiparis");
+                this._SF1KDV = value;
+                OnPropertyChanged("SF1KDV");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short UseSatFatIrs
+        public short SF1ValorGun
         {
-            get { return useSatFatIrs; }
+            get { return this._SF1ValorGun; }
             set
             {
-                useSatFatIrs = value;
-                OnPropertyChanged("UseSatFatIrs");
+                this._SF1ValorGun = value;
+                OnPropertyChanged("SF1ValorGun");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short UseCikisIslem
+        public short SF2Birim
         {
-            get { return useCikisIslem; }
+            get { return this._SF2Birim; }
             set
             {
-                useCikisIslem = value;
-                OnPropertyChanged("UseCikisIslem");
+                this._SF2Birim = value;
+                OnPropertyChanged("SF2Birim");
+            }
+        }
+
+        /// <summary> VARCHAR (3) * </summary>
+        public string SF2DovizCinsi
+        {
+            get { return this._SF2DovizCinsi; }
+            set
+            {
+                this._SF2DovizCinsi = value;
+                OnPropertyChanged("SF2DovizCinsi");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short UseSetUrun
+        public short SF2DvzValorGun
         {
-            get { return useSetUrun; }
+            get { return this._SF2DvzValorGun; }
             set
             {
-                useSetUrun = value;
-                OnPropertyChanged("UseSetUrun");
+                this._SF2DvzValorGun = value;
+                OnPropertyChanged("SF2DvzValorGun");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF2KDV
+        {
+            get { return this._SF2KDV; }
+            set
+            {
+                this._SF2KDV = value;
+                OnPropertyChanged("SF2KDV");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF2ValorGun
+        {
+            get { return this._SF2ValorGun; }
+            set
+            {
+                this._SF2ValorGun = value;
+                OnPropertyChanged("SF2ValorGun");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF3Birim
+        {
+            get { return this._SF3Birim; }
+            set
+            {
+                this._SF3Birim = value;
+                OnPropertyChanged("SF3Birim");
+            }
+        }
+
+        /// <summary> VARCHAR (3) * </summary>
+        public string SF3DovizCinsi
+        {
+            get { return this._SF3DovizCinsi; }
+            set
+            {
+                this._SF3DovizCinsi = value;
+                OnPropertyChanged("SF3DovizCinsi");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF3DvzValorGun
+        {
+            get { return this._SF3DvzValorGun; }
+            set
+            {
+                this._SF3DvzValorGun = value;
+                OnPropertyChanged("SF3DvzValorGun");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF3KDV
+        {
+            get { return this._SF3KDV; }
+            set
+            {
+                this._SF3KDV = value;
+                OnPropertyChanged("SF3KDV");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF3ValorGun
+        {
+            get { return this._SF3ValorGun; }
+            set
+            {
+                this._SF3ValorGun = value;
+                OnPropertyChanged("SF3ValorGun");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF4Birim
+        {
+            get { return this._SF4Birim; }
+            set
+            {
+                this._SF4Birim = value;
+                OnPropertyChanged("SF4Birim");
+            }
+        }
+
+        /// <summary> VARCHAR (3) * </summary>
+        public string SF4DovizCinsi
+        {
+            get { return this._SF4DovizCinsi; }
+            set
+            {
+                this._SF4DovizCinsi = value;
+                OnPropertyChanged("SF4DovizCinsi");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF4KDV
+        {
+            get { return this._SF4KDV; }
+            set
+            {
+                this._SF4KDV = value;
+                OnPropertyChanged("SF4KDV");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF4ValorGun
+        {
+            get { return this._SF4ValorGun; }
+            set
+            {
+                this._SF4ValorGun = value;
+                OnPropertyChanged("SF4ValorGun");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF5Birim
+        {
+            get { return this._SF5Birim; }
+            set
+            {
+                this._SF5Birim = value;
+                OnPropertyChanged("SF5Birim");
+            }
+        }
+
+        /// <summary> VARCHAR (3) * </summary>
+        public string SF5DovizCinsi
+        {
+            get { return this._SF5DovizCinsi; }
+            set
+            {
+                this._SF5DovizCinsi = value;
+                OnPropertyChanged("SF5DovizCinsi");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF5KDV
+        {
+            get { return this._SF5KDV; }
+            set
+            {
+                this._SF5KDV = value;
+                OnPropertyChanged("SF5KDV");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF5ValorGun
+        {
+            get { return this._SF5ValorGun; }
+            set
+            {
+                this._SF5ValorGun = value;
+                OnPropertyChanged("SF5ValorGun");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF6Birim
+        {
+            get { return this._SF6Birim; }
+            set
+            {
+                this._SF6Birim = value;
+                OnPropertyChanged("SF6Birim");
+            }
+        }
+
+        /// <summary> VARCHAR (3) * </summary>
+        public string SF6DovizCinsi
+        {
+            get { return this._SF6DovizCinsi; }
+            set
+            {
+                this._SF6DovizCinsi = value;
+                OnPropertyChanged("SF6DovizCinsi");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF6KDV
+        {
+            get { return this._SF6KDV; }
+            set
+            {
+                this._SF6KDV = value;
+                OnPropertyChanged("SF6KDV");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SF6ValorGun
+        {
+            get { return this._SF6ValorGun; }
+            set
+            {
+                this._SF6ValorGun = value;
+                OnPropertyChanged("SF6ValorGun");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SirIciSipSitList
+        {
+            get { return this._SirIciSipSitList; }
+            set
+            {
+                this._SirIciSipSitList = value;
+                OnPropertyChanged("SirIciSipSitList");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SirIciSipSitListAdi
+        {
+            get { return this._SirIciSipSitListAdi; }
+            set
+            {
+                this._SirIciSipSitListAdi = value;
+                OnPropertyChanged("SirIciSipSitListAdi");
+            }
+        }
+
+        /// <summary> VARCHAR (50) * </summary>
+        public string SirketWebAdres
+        {
+            get { return this._SirketWebAdres; }
+            set
+            {
+                this._SirketWebAdres = value;
+                OnPropertyChanged("SirketWebAdres");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SonAlimBF
+        {
+            get { return this._SonAlimBF; }
+            set
+            {
+                this._SonAlimBF = value;
+                OnPropertyChanged("SonAlimBF");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string SonAlimCHK
+        {
+            get { return this._SonAlimCHK; }
+            set
+            {
+                this._SonAlimCHK = value;
+                OnPropertyChanged("SonAlimCHK");
+            }
+        }
+
+        /// <summary> VARCHAR (16) * </summary>
+        public string SonAlimEvrakNo
+        {
+            get { return this._SonAlimEvrakNo; }
+            set
+            {
+                this._SonAlimEvrakNo = value;
+                OnPropertyChanged("SonAlimEvrakNo");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int SonAlimFatTarih
+        {
+            get { return this._SonAlimFatTarih; }
+            set
+            {
+                this._SonAlimFatTarih = value;
+                OnPropertyChanged("SonAlimFatTarih");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SonMlyBirimFiyat
+        {
+            get { return this._SonMlyBirimFiyat; }
+            set
+            {
+                this._SonMlyBirimFiyat = value;
+                OnPropertyChanged("SonMlyBirimFiyat");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short SonMlySekli
+        {
+            get { return this._SonMlySekli; }
+            set
+            {
+                this._SonMlySekli = value;
+                OnPropertyChanged("SonMlySekli");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int SonMlyTarih
+        {
+            get { return this._SonMlyTarih; }
+            set
+            {
+                this._SonMlyTarih = value;
+                OnPropertyChanged("SonMlyTarih");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SonSayimFark
+        {
+            get { return this._SonSayimFark; }
+            set
+            {
+                this._SonSayimFark = value;
+                OnPropertyChanged("SonSayimFark");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal SonSayimSonuc
+        {
+            get { return this._SonSayimSonuc; }
+            set
+            {
+                this._SonSayimSonuc = value;
+                OnPropertyChanged("SonSayimSonuc");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int SonSayimTarih
+        {
+            get { return this._SonSayimTarih; }
+            set
+            {
+                this._SonSayimTarih = value;
+                OnPropertyChanged("SonSayimTarih");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal TahminiStok
+        {
+            get { return this._TahminiStok; }
+            set
+            {
+                this._TahminiStok = value;
+                OnPropertyChanged("TahminiStok");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short TeminSuresi
+        {
+            get { return this._TeminSuresi; }
+            set
+            {
+                this._TeminSuresi = value;
+                OnPropertyChanged("TeminSuresi");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string TeminYeri
+        {
+            get { return this._TeminYeri; }
+            set
+            {
+                this._TeminYeri = value;
+                OnPropertyChanged("TeminYeri");
+            }
+        }
+
+        /// <summary> TIMESTAMP (8) * </summary>
+        public byte[] timestamp
+        {
+            get { return this._timestamp; }
+            set
+            {
+                this._timestamp = value;
+                OnPropertyChanged("timestamp");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string TipKod
+        {
+            get { return this._TipKod; }
+            set
+            {
+                this._TipKod = value;
+                OnPropertyChanged("TipKod");
+            }
+        }
+
+        /// <summary> VARCHAR (30) * </summary>
+        public string UreticiKodu
+        {
+            get { return this._UreticiKodu; }
+            set
+            {
+                this._UreticiKodu = value;
+                OnPropertyChanged("UreticiKodu");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short UseAlimIrsFat
+        {
+            get { return this._UseAlimIrsFat; }
+            set
+            {
+                this._UseAlimIrsFat = value;
+                OnPropertyChanged("UseAlimIrsFat");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short UseAlimRezervasyon
         {
-            get { return useAlimRezervasyon; }
+            get { return this._UseAlimRezervasyon; }
             set
             {
-                useAlimRezervasyon = value;
+                this._UseAlimRezervasyon = value;
                 OnPropertyChanged("UseAlimRezervasyon");
             }
         }
@@ -2128,878 +2515,127 @@ namespace Birikim.Models.Finsat
         /// <summary> SMALLINT (2) * </summary>
         public short UseAlimSiparis
         {
-            get { return useAlimSiparis; }
+            get { return this._UseAlimSiparis; }
             set
             {
-                useAlimSiparis = value;
+                this._UseAlimSiparis = value;
                 OnPropertyChanged("UseAlimSiparis");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short UseAlimIrsFat
+        public short UseCikisIslem
         {
-            get { return useAlimIrsFat; }
+            get { return this._UseCikisIslem; }
             set
             {
-                useAlimIrsFat = value;
-                OnPropertyChanged("UseAlimIrsFat");
+                this._UseCikisIslem = value;
+                OnPropertyChanged("UseCikisIslem");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short UseGirisIslem
         {
-            get { return useGirisIslem; }
+            get { return this._UseGirisIslem; }
             set
             {
-                useGirisIslem = value;
+                this._UseGirisIslem = value;
                 OnPropertyChanged("UseGirisIslem");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short SF1ValorGun
+        public short UseSatFatIrs
         {
-            get { return sF1ValorGun; }
+            get { return this._UseSatFatIrs; }
             set
             {
-                sF1ValorGun = value;
-                OnPropertyChanged("SF1ValorGun");
+                this._UseSatFatIrs = value;
+                OnPropertyChanged("UseSatFatIrs");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short SF2ValorGun
+        public short UseSatRezervasyon
         {
-            get { return sF2ValorGun; }
+            get { return this._UseSatRezervasyon; }
             set
             {
-                sF2ValorGun = value;
-                OnPropertyChanged("SF2ValorGun");
+                this._UseSatRezervasyon = value;
+                OnPropertyChanged("UseSatRezervasyon");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short SF3ValorGun
+        public short UseSatSiparis
         {
-            get { return sF3ValorGun; }
+            get { return this._UseSatSiparis; }
             set
             {
-                sF3ValorGun = value;
-                OnPropertyChanged("SF3ValorGun");
+                this._UseSatSiparis = value;
+                OnPropertyChanged("UseSatSiparis");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short SF4ValorGun
+        public short UseSetUrun
         {
-            get { return sF4ValorGun; }
+            get { return this._UseSetUrun; }
             set
             {
-                sF4ValorGun = value;
-                OnPropertyChanged("SF4ValorGun");
+                this._UseSetUrun = value;
+                OnPropertyChanged("UseSetUrun");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
-        public short SF5ValorGun
+        public short ValorGun
         {
-            get { return sF5ValorGun; }
+            get { return this._ValorGun; }
             set
             {
-                sF5ValorGun = value;
-                OnPropertyChanged("SF5ValorGun");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF6ValorGun
-        {
-            get { return sF6ValorGun; }
-            set
-            {
-                sF6ValorGun = value;
-                OnPropertyChanged("SF6ValorGun");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF1DvzValorGun
-        {
-            get { return sF1DvzValorGun; }
-            set
-            {
-                sF1DvzValorGun = value;
-                OnPropertyChanged("SF1DvzValorGun");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF2DvzValorGun
-        {
-            get { return sF2DvzValorGun; }
-            set
-            {
-                sF2DvzValorGun = value;
-                OnPropertyChanged("SF2DvzValorGun");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SF3DvzValorGun
-        {
-            get { return sF3DvzValorGun; }
-            set
-            {
-                sF3DvzValorGun = value;
-                OnPropertyChanged("SF3DvzValorGun");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SatisFiyatTip
-        {
-            get { return satisFiyatTip; }
-            set
-            {
-                satisFiyatTip = value;
-                OnPropertyChanged("SatisFiyatTip");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyatAltLimit
-        {
-            get { return satisFiyatAltLimit; }
-            set
-            {
-                satisFiyatAltLimit = value;
-                OnPropertyChanged("SatisFiyatAltLimit");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisFiyatUstLimit
-        {
-            get { return satisFiyatUstLimit; }
-            set
-            {
-                satisFiyatUstLimit = value;
-                OnPropertyChanged("SatisFiyatUstLimit");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int SonSayimTarih
-        {
-            get { return sonSayimTarih; }
-            set
-            {
-                sonSayimTarih = value;
-                OnPropertyChanged("SonSayimTarih");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SonSayimSonuc
-        {
-            get { return sonSayimSonuc; }
-            set
-            {
-                sonSayimSonuc = value;
-                OnPropertyChanged("SonSayimSonuc");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SonSayimFark
-        {
-            get { return sonSayimFark; }
-            set
-            {
-                sonSayimFark = value;
-                OnPropertyChanged("SonSayimFark");
-            }
-        }
-
-        /// <summary> VARCHAR (64) * </summary>
-        public string Notlar
-        {
-            get { return notlar; }
-            set
-            {
-                notlar = value;
-                OnPropertyChanged("Notlar");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal BlkMiktar
-        {
-            get { return blkMiktar; }
-            set
-            {
-                blkMiktar = value;
-                OnPropertyChanged("BlkMiktar");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short ElekTicSitList
-        {
-            get { return elekTicSitList; }
-            set
-            {
-                elekTicSitList = value;
-                OnPropertyChanged("ElekTicSitList");
+                this._ValorGun = value;
+                OnPropertyChanged("ValorGun");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short WebMagSitList
         {
-            get { return webMagSitList; }
+            get { return this._WebMagSitList; }
             set
             {
-                webMagSitList = value;
+                this._WebMagSitList = value;
                 OnPropertyChanged("WebMagSitList");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DagZinSitList
-        {
-            get { return dagZinSitList; }
-            set
-            {
-                dagZinSitList = value;
-                OnPropertyChanged("DagZinSitList");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short SirIciSipSitList
-        {
-            get { return sirIciSipSitList; }
-            set
-            {
-                sirIciSipSitList = value;
-                OnPropertyChanged("SirIciSipSitList");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short ElekTicSitListAdi
-        {
-            get { return elekTicSitListAdi; }
-            set
-            {
-                elekTicSitListAdi = value;
-                OnPropertyChanged("ElekTicSitListAdi");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short WebMagSitListAdi
         {
-            get { return webMagSitListAdi; }
+            get { return this._WebMagSitListAdi; }
             set
             {
-                webMagSitListAdi = value;
+                this._WebMagSitListAdi = value;
                 OnPropertyChanged("WebMagSitListAdi");
             }
         }
 
-        /// <summary> SMALLINT (2) * </summary>
-        public short DagZinSitListAdi
+        public void AcceptChanges()
         {
-            get { return dagZinSitListAdi; }
-            set
-            {
-                dagZinSitListAdi = value;
-                OnPropertyChanged("DagZinSitListAdi");
-            }
+            ChangedProperties.Clear();
         }
 
-        /// <summary> SMALLINT (2) * </summary>
-        public short SirIciSipSitListAdi
+        /// <summary> Set işleminde Property " = " eşit ile otomatik başlar. </summary>
+        public void SetAdd(STKE Property, params object[] Degerler)
         {
-            get { return sirIciSipSitListAdi; }
-            set
-            {
-                sirIciSipSitListAdi = value;
-                OnPropertyChanged("SirIciSipSitListAdi");
-            }
+            SetList.Add(SqlExperOperatorIslem.SetAdd(Enum.GetName(typeof(STKE), Property), Degerler));
         }
 
-        /// <summary> VARCHAR (20) * </summary>
-        public string DemirbasKodu
+        public void WhereAdd(STKE Property, object Deger, Operand And_Or = Operand.AND)
         {
-            get { return demirbasKodu; }
-            set
-            {
-                demirbasKodu = value;
-                OnPropertyChanged("DemirbasKodu");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short MiktarTakibi
-        {
-            get { return miktarTakibi; }
-            set
-            {
-                miktarTakibi = value;
-                OnPropertyChanged("MiktarTakibi");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short BakGostSekli
-        {
-            get { return bakGostSekli; }
-            set
-            {
-                bakGostSekli = value;
-                OnPropertyChanged("BakGostSekli");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short KartTip
-        {
-            get { return kartTip; }
-            set
-            {
-                kartTip = value;
-                OnPropertyChanged("KartTip");
-            }
-        }
-
-        /// <summary> VARCHAR (2) * </summary>
-        public string GuvenlikKod
-        {
-            get { return guvenlikKod; }
-            set
-            {
-                guvenlikKod = value;
-                OnPropertyChanged("GuvenlikKod");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string Kaydeden
-        {
-            get { return kaydeden; }
-            set
-            {
-                kaydeden = value;
-                OnPropertyChanged("Kaydeden");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int KayitTarih
-        {
-            get { return kayitTarih; }
-            set
-            {
-                kayitTarih = value;
-                OnPropertyChanged("KayitTarih");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int KayitSaat
-        {
-            get { return kayitSaat; }
-            set
-            {
-                kayitSaat = value;
-                OnPropertyChanged("KayitSaat");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short KayitKaynak
-        {
-            get { return kayitKaynak; }
-            set
-            {
-                kayitKaynak = value;
-                OnPropertyChanged("KayitKaynak");
-            }
-        }
-
-        /// <summary> VARCHAR (12) * </summary>
-        public string KayitSurum
-        {
-            get { return kayitSurum; }
-            set
-            {
-                kayitSurum = value;
-                OnPropertyChanged("KayitSurum");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string Degistiren
-        {
-            get { return degistiren; }
-            set
-            {
-                degistiren = value;
-                OnPropertyChanged("Degistiren");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int DegisTarih
-        {
-            get { return degisTarih; }
-            set
-            {
-                degisTarih = value;
-                OnPropertyChanged("DegisTarih");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int DegisSaat
-        {
-            get { return degisSaat; }
-            set
-            {
-                degisSaat = value;
-                OnPropertyChanged("DegisSaat");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DegisKaynak
-        {
-            get { return degisKaynak; }
-            set
-            {
-                degisKaynak = value;
-                OnPropertyChanged("DegisKaynak");
-            }
-        }
-
-        /// <summary> VARCHAR (12) * </summary>
-        public string DegisSurum
-        {
-            get { return degisSurum; }
-            set
-            {
-                degisSurum = value;
-                OnPropertyChanged("DegisSurum");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short CheckSum
-        {
-            get { return checkSum; }
-            set
-            {
-                checkSum = value;
-                OnPropertyChanged("CheckSum");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal AlimTeklif
-        {
-            get { return alimTeklif; }
-            set
-            {
-                alimTeklif = value;
-                OnPropertyChanged("AlimTeklif");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SatisTeklif
-        {
-            get { return satisTeklif; }
-            set
-            {
-                satisTeklif = value;
-                OnPropertyChanged("SatisTeklif");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string SatMalMaliyetHesap
-        {
-            get { return satMalMaliyetHesap; }
-            set
-            {
-                satMalMaliyetHesap = value;
-                OnPropertyChanged("SatMalMaliyetHesap");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short AktifPasif
-        {
-            get { return aktifPasif; }
-            set
-            {
-                aktifPasif = value;
-                OnPropertyChanged("AktifPasif");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short TevfikatOran
-        {
-            get { return tevfikatOran; }
-            set
-            {
-                tevfikatOran = value;
-                OnPropertyChanged("TevfikatOran");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SonAlimNetBF
-        {
-            get { return sonAlimNetBF; }
-            set
-            {
-                sonAlimNetBF = value;
-                OnPropertyChanged("SonAlimNetBF");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SonAlimDvzBF
-        {
-            get { return sonAlimDvzBF; }
-            set
-            {
-                sonAlimDvzBF = value;
-                OnPropertyChanged("SonAlimDvzBF");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal SonAlimDvzNetBF
-        {
-            get { return sonAlimDvzNetBF; }
-            set
-            {
-                sonAlimDvzNetBF = value;
-                OnPropertyChanged("SonAlimDvzNetBF");
-            }
-        }
-
-        /// <summary> VARCHAR (50) * </summary>
-        public string YDAlimlarHesabi
-        {
-            get { return yDAlimlarHesabi; }
-            set
-            {
-                yDAlimlarHesabi = value;
-                OnPropertyChanged("YDAlimlarHesabi");
-            }
-        }
-
-        /// <summary> VARCHAR (7) * </summary>
-        public string TevkifatAlis
-        {
-            get { return tevkifatAlis; }
-            set
-            {
-                tevkifatAlis = value;
-                OnPropertyChanged("TevkifatAlis");
-            }
-        }
-
-        /// <summary> VARCHAR (7) * </summary>
-        public string TevkifatSatis
-        {
-            get { return tevkifatSatis; }
-            set
-            {
-                tevkifatSatis = value;
-                OnPropertyChanged("TevkifatSatis");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string TevkifatAlisTam
-        {
-            get { return tevkifatAlisTam; }
-            set
-            {
-                tevkifatAlisTam = value;
-                OnPropertyChanged("TevkifatAlisTam");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod14
-        {
-            get { return kod14; }
-            set
-            {
-                kod14 = value;
-                OnPropertyChanged("Kod14");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod15
-        {
-            get { return kod15; }
-            set
-            {
-                kod15 = value;
-                OnPropertyChanged("Kod15");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod16
-        {
-            get { return kod16; }
-            set
-            {
-                kod16 = value;
-                OnPropertyChanged("Kod16");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod17
-        {
-            get { return kod17; }
-            set
-            {
-                kod17 = value;
-                OnPropertyChanged("Kod17");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Kod18
-        {
-            get { return kod18; }
-            set
-            {
-                kod18 = value;
-                OnPropertyChanged("Kod18");
-            }
-        }
-
-        /// <summary> VARCHAR (4) * </summary>
-        public string Birim4
-        {
-            get { return birim4; }
-            set
-            {
-                birim4 = value;
-                OnPropertyChanged("Birim4");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short Operator4
-        {
-            get { return operator4; }
-            set
-            {
-                operator4 = value;
-                OnPropertyChanged("Operator4");
-            }
-        }
-
-        /// <summary> FLOAT (8) * </summary>
-        public double KatSayi4
-        {
-            get { return katSayi4; }
-            set
-            {
-                katSayi4 = value;
-                OnPropertyChanged("KatSayi4");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal En
-        {
-            get { return en; }
-            set
-            {
-                en = value;
-                OnPropertyChanged("En");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Boy
-        {
-            get { return boy; }
-            set
-            {
-                boy = value;
-                OnPropertyChanged("Boy");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Genislik
-        {
-            get { return genislik; }
-            set
-            {
-                genislik = value;
-                OnPropertyChanged("Genislik");
-            }
-        }
-
-        /// <summary> VARCHAR (4) * </summary>
-        public string BoyutBirim
-        {
-            get { return boyutBirim; }
-            set
-            {
-                boyutBirim = value;
-                OnPropertyChanged("BoyutBirim");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal BrutAgirlik
-        {
-            get { return brutAgirlik; }
-            set
-            {
-                brutAgirlik = value;
-                OnPropertyChanged("BrutAgirlik");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal NetAgirlik
-        {
-            get { return netAgirlik; }
-            set
-            {
-                netAgirlik = value;
-                OnPropertyChanged("NetAgirlik");
-            }
-        }
-
-        /// <summary> VARCHAR (4) * </summary>
-        public string BirimAgirlik
-        {
-            get { return birimAgirlik; }
-            set
-            {
-                birimAgirlik = value;
-                OnPropertyChanged("BirimAgirlik");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal BrutHacim
-        {
-            get { return brutHacim; }
-            set
-            {
-                brutHacim = value;
-                OnPropertyChanged("BrutHacim");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal NetHacim
-        {
-            get { return netHacim; }
-            set
-            {
-                netHacim = value;
-                OnPropertyChanged("NetHacim");
-            }
-        }
-
-        /// <summary> VARCHAR (4) * </summary>
-        public string BirimHacim
-        {
-            get { return birimHacim; }
-            set
-            {
-                birimHacim = value;
-                OnPropertyChanged("BirimHacim");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short YOKCPLUGonder
-        {
-            get { return yOKCPLUGonder; }
-            set
-            {
-                yOKCPLUGonder = value;
-                OnPropertyChanged("YOKCPLUGonder");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short YOKCDepartmanID
-        {
-            get { return yOKCDepartmanID; }
-            set
-            {
-                yOKCDepartmanID = value;
-                OnPropertyChanged("YOKCDepartmanID");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int YOKCPLUID
-        {
-            get { return yOKCPLUID; }
-            set
-            {
-                yOKCPLUID = value;
-                OnPropertyChanged("YOKCPLUID");
-            }
-        }
-
-        /// <summary> INT (4) IdentityKey * </summary>
-        public int ROW_ID => rOW_ID;
-
-        /// <summary> TIMESTAMP (8) * </summary>
-        public byte[] timestamp
-        {
-            get { return _timestamp; }
-            set
-            {
-                _timestamp = value;
-                OnPropertyChanged("timestamp");
-            }
-        }
-
-        /// <summary> VARCHAR (30) PRIMARY KEY * </summary>
-        public string pk_MalKodu
-        {
-            private get { return _pk_MalKodu; }
-            set
-            {
-                _pk_MalKodu = value;
-                OnPropertyChanged("pk_MalKodu");
-            }
-        }
-
-        public void WhereAdd(STKE Property, object deger, Operand and_Or = Operand.AND)
-        {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(STKE), Property), deger, and_Or));
+            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(STKE), Property), Deger, And_Or));
         }
 
         public void WhereAdd(STKE Property, Islem islem, object Deger, Operand And_Or = Operand.AND)
@@ -3017,38 +2653,7 @@ namespace Birikim.Models.Finsat
             WhereList.Add(SqlExperOperatorIslem.WhereAdd(Degerler));
         }
 
-        /// <summary> Set işleminde Property " = " eşit ile otomatik başlar. </summary>
-        public void SetAdd(STKE Property, params object[] Degerler)
-        {
-            SetList.Add(SqlExperOperatorIslem.SetAdd(Enum.GetName(typeof(STKE), Property), Degerler));
-        }
-
-        List<string> WhereList = new List<string>();
-        List<string> SetList = new List<string>();
-        string info_FullTableName = "FINSAT6{0}.FINSAT6{0}.STK";
-        string[] info_PrimaryKeys = { "pk_MalKodu" };
-        string[] info_IdentityKeys = { "ROW_ID" };
-
-        List<string> ChangedProperties = new List<string>();
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public STK()
-        {
-            ChangedProperties = new List<string>();
-            PropertyChanged += STK_PropertyChanged;
-        }
-
-        public void AcceptChanges() => ChangedProperties.Clear();
-
-        void STK_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (!ChangedProperties.Contains(e.PropertyName))
-            {
-                ChangedProperties.Add(e.PropertyName);
-            }
-        }
-
-        void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {
@@ -3056,6 +2661,13 @@ namespace Birikim.Models.Finsat
             }
         }
 
+        private void STK_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (!ChangedProperties.Contains(e.PropertyName))
+            {
+                ChangedProperties.Add(e.PropertyName);
+            }
+        }
     }
 
 }

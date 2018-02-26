@@ -1,6 +1,3 @@
-using Birikim.Enums;
-using Birikim.Helpers;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -49,256 +46,76 @@ namespace Birikim.Models.Finsat
 
     public class IRS : INotifyPropertyChanged
     {
+        public static readonly string StandartFields = @"'IslemTur','EvrakNo','Tarih','Chk','KynkEvrakTip','SiraNo',
+           'IslemTip','MalKodu','Miktar','IslemTur2','EvrakNo2','Tarih2','Chk2','KynkEvrakTip2','SiraNo2',
+           'IslemTip2','IslemDurum','KayitTuru','BlkDurumu','BlkTarih','Kaydeden','KayitTarih','KayitSaat',
+           'KayitKaynak','KayitSurum','Degistiren','DegisTarih','DegisSaat','DegisKaynak','DegisSurum',
+           'CheckSum', 'Row_ID', 'timestamp'";
 
-        short islemTur;
-        string evrakNo;
-        int tarih;
-        string chk;
-        short kynkEvrakTip;
-        short siraNo;
-        short islemTip;
-        string malKodu;
-        decimal miktar;
-        short islemTur2;
-        string evrakNo2;
-        int tarih2;
-        string chk2;
-        short kynkEvrakTip2;
-        short siraNo2;
-        short islemTip2;
-        short islemDurum;
-        short kayitTuru;
-        short blkDurumu;
-        int blkTarih;
-        string kaydeden;
-        int kayitTarih;
-        int kayitSaat;
-        short kayitKaynak;
-        string kayitSurum;
-        string degistiren;
-        int degisTarih;
-        int degisSaat;
-        short degisKaynak;
-        string degisSurum;
-        short checkSum;
-        string depo;
-        string depo2;
-        int row_ID;
-        byte[] _timestamp;
-        short _pk_IslemTur;
-        string _pk_EvrakNo;
-        int _pk_Tarih;
-        string _pk_Chk;
-        short _pk_KynkEvrakTip;
-        short _pk_SiraNo;
-        string _pk_EvrakNo2;
-        short _pk_SiraNo2;
+        private short _BlkDurumu;
+        private int _BlkTarih;
+        private short _CheckSum;
+        private string _Chk;
+        private string _Chk2;
+        private short _DegisKaynak;
+        private int _DegisSaat;
+        private string _DegisSurum;
+        private int _DegisTarih;
+        private string _Degistiren;
+        private string _EvrakNo;
+        private string _EvrakNo2;
+        private short _IslemDurum;
+        private short _IslemTip;
+        private short _IslemTip2;
+        private short _IslemTur;
+        private short _IslemTur2;
+        private string _Kaydeden;
+        private short _KayitKaynak;
+        private int _KayitSaat;
+        private string _KayitSurum;
+        private int _KayitTarih;
+        private short _KayitTuru;
+        private short _KynkEvrakTip;
+        private short _KynkEvrakTip2;
+        private string _MalKodu;
+        private decimal _Miktar;
+        private string _pk_Chk;
+        private string _pk_EvrakNo;
+        private string _pk_EvrakNo2;
+        private short _pk_IslemTur;
+        private short _pk_KynkEvrakTip;
+        private short _pk_SiraNo;
+        private short _pk_SiraNo2;
+        private int _pk_Tarih;
+        private int _Row_ID;
+        private short _SiraNo;
+        private short _SiraNo2;
+        private int _Tarih;
+        private int _Tarih2;
+        private byte[] _timestamp;
+        private List<string> ChangedProperties = new List<string>();
 
-        /// <summary> SMALLINT (2) PrimaryKey * </summary>
-        public short IslemTur
+        private string info_FullTableName = "FINSAT6{0}.FINSAT6{0}.IRS";
+
+        private string[] info_IdentityKeys = { "Row_ID" };
+
+        private string[] info_PrimaryKeys = { "pk_IslemTur", "pk_EvrakNo", "pk_Tarih", "pk_Chk", "pk_KynkEvrakTip", "pk_SiraNo", "pk_EvrakNo2", "pk_SiraNo2" };
+
+        public IRS()
         {
-            get { return islemTur; }
-            set
-            {
-                islemTur = value;
-                OnPropertyChanged("IslemTur");
-            }
+            ChangedProperties = new List<string>();
+            this.PropertyChanged += IRS_PropertyChanged;
         }
 
-        /// <summary> VARCHAR (16) PrimaryKey * </summary>
-        public string EvrakNo
-        {
-            get { return evrakNo; }
-            set
-            {
-                evrakNo = value;
-                OnPropertyChanged("EvrakNo");
-            }
-        }
-
-        /// <summary> INT (4) PrimaryKey * </summary>
-        public int Tarih
-        {
-            get { return tarih; }
-            set
-            {
-                tarih = value;
-                OnPropertyChanged("Tarih");
-            }
-        }
-
-        /// <summary> VARCHAR (20) PrimaryKey * </summary>
-        public string Chk
-        {
-            get { return chk; }
-            set
-            {
-                chk = value;
-                OnPropertyChanged("Chk");
-            }
-        }
-
-        /// <summary> SMALLINT (2) PrimaryKey * </summary>
-        public short KynkEvrakTip
-        {
-            get { return kynkEvrakTip; }
-            set
-            {
-                kynkEvrakTip = value;
-                OnPropertyChanged("KynkEvrakTip");
-            }
-        }
-
-        /// <summary> SMALLINT (2) PrimaryKey * </summary>
-        public short SiraNo
-        {
-            get { return siraNo; }
-            set
-            {
-                siraNo = value;
-                OnPropertyChanged("SiraNo");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short IslemTip
-        {
-            get { return islemTip; }
-            set
-            {
-                islemTip = value;
-                OnPropertyChanged("IslemTip");
-            }
-        }
-
-        /// <summary> VARCHAR (30) * </summary>
-        public string MalKodu
-        {
-            get { return malKodu; }
-            set
-            {
-                malKodu = value;
-                OnPropertyChanged("MalKodu");
-            }
-        }
-
-        /// <summary> NUMERIC (13) * </summary>
-        public decimal Miktar
-        {
-            get { return miktar; }
-            set
-            {
-                miktar = value;
-                OnPropertyChanged("Miktar");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short IslemTur2
-        {
-            get { return islemTur2; }
-            set
-            {
-                islemTur2 = value;
-                OnPropertyChanged("IslemTur2");
-            }
-        }
-
-        /// <summary> VARCHAR (16) PrimaryKey * </summary>
-        public string EvrakNo2
-        {
-            get { return evrakNo2; }
-            set
-            {
-                evrakNo2 = value;
-                OnPropertyChanged("EvrakNo2");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int Tarih2
-        {
-            get { return tarih2; }
-            set
-            {
-                tarih2 = value;
-                OnPropertyChanged("Tarih2");
-            }
-        }
-
-        /// <summary> VARCHAR (20) * </summary>
-        public string Chk2
-        {
-            get { return chk2; }
-            set
-            {
-                chk2 = value;
-                OnPropertyChanged("Chk2");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short KynkEvrakTip2
-        {
-            get { return kynkEvrakTip2; }
-            set
-            {
-                kynkEvrakTip2 = value;
-                OnPropertyChanged("KynkEvrakTip2");
-            }
-        }
-
-        /// <summary> SMALLINT (2) PrimaryKey * </summary>
-        public short SiraNo2
-        {
-            get { return siraNo2; }
-            set
-            {
-                siraNo2 = value;
-                OnPropertyChanged("SiraNo2");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short IslemTip2
-        {
-            get { return islemTip2; }
-            set
-            {
-                islemTip2 = value;
-                OnPropertyChanged("IslemTip2");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short IslemDurum
-        {
-            get { return islemDurum; }
-            set
-            {
-                islemDurum = value;
-                OnPropertyChanged("IslemDurum");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short KayitTuru
-        {
-            get { return kayitTuru; }
-            set
-            {
-                kayitTuru = value;
-                OnPropertyChanged("KayitTuru");
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary> SMALLINT (2) * </summary>
         public short BlkDurumu
         {
-            get { return blkDurumu; }
+            get { return this._BlkDurumu; }
             set
             {
-                blkDurumu = value;
+                this._BlkDurumu = value;
                 OnPropertyChanged("BlkDurumu");
             }
         }
@@ -306,142 +123,109 @@ namespace Birikim.Models.Finsat
         /// <summary> INT (4) * </summary>
         public int BlkTarih
         {
-            get { return blkTarih; }
+            get { return this._BlkTarih; }
             set
             {
-                blkTarih = value;
+                this._BlkTarih = value;
                 OnPropertyChanged("BlkTarih");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string Kaydeden
-        {
-            get { return kaydeden; }
-            set
-            {
-                kaydeden = value;
-                OnPropertyChanged("Kaydeden");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int KayitTarih
-        {
-            get { return kayitTarih; }
-            set
-            {
-                kayitTarih = value;
-                OnPropertyChanged("KayitTarih");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int KayitSaat
-        {
-            get { return kayitSaat; }
-            set
-            {
-                kayitSaat = value;
-                OnPropertyChanged("KayitSaat");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short KayitKaynak
-        {
-            get { return kayitKaynak; }
-            set
-            {
-                kayitKaynak = value;
-                OnPropertyChanged("KayitKaynak");
-            }
-        }
-
-        /// <summary> VARCHAR (12) * </summary>
-        public string KayitSurum
-        {
-            get { return kayitSurum; }
-            set
-            {
-                kayitSurum = value;
-                OnPropertyChanged("KayitSurum");
-            }
-        }
-
-        /// <summary> VARCHAR (5) * </summary>
-        public string Degistiren
-        {
-            get { return degistiren; }
-            set
-            {
-                degistiren = value;
-                OnPropertyChanged("Degistiren");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int DegisTarih
-        {
-            get { return degisTarih; }
-            set
-            {
-                degisTarih = value;
-                OnPropertyChanged("DegisTarih");
-            }
-        }
-
-        /// <summary> INT (4) * </summary>
-        public int DegisSaat
-        {
-            get { return degisSaat; }
-            set
-            {
-                degisSaat = value;
-                OnPropertyChanged("DegisSaat");
-            }
-        }
-
-        /// <summary> SMALLINT (2) * </summary>
-        public short DegisKaynak
-        {
-            get { return degisKaynak; }
-            set
-            {
-                degisKaynak = value;
-                OnPropertyChanged("DegisKaynak");
-            }
-        }
-
-        /// <summary> VARCHAR (12) * </summary>
-        public string DegisSurum
-        {
-            get { return degisSurum; }
-            set
-            {
-                degisSurum = value;
-                OnPropertyChanged("DegisSurum");
             }
         }
 
         /// <summary> SMALLINT (2) * </summary>
         public short CheckSum
         {
-            get { return checkSum; }
+            get { return this._CheckSum; }
             set
             {
-                checkSum = value;
+                this._CheckSum = value;
                 OnPropertyChanged("CheckSum");
+            }
+        }
+
+        /// <summary> VARCHAR (20) PrimaryKey * </summary>
+        public string Chk
+        {
+            get { return this._Chk; }
+            set
+            {
+                this._Chk = value;
+                OnPropertyChanged("Chk");
+            }
+        }
+
+        /// <summary> VARCHAR (20) * </summary>
+        public string Chk2
+        {
+            get { return this._Chk2; }
+            set
+            {
+                this._Chk2 = value;
+                OnPropertyChanged("Chk2");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short DegisKaynak
+        {
+            get { return this._DegisKaynak; }
+            set
+            {
+                this._DegisKaynak = value;
+                OnPropertyChanged("DegisKaynak");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int DegisSaat
+        {
+            get { return this._DegisSaat; }
+            set
+            {
+                this._DegisSaat = value;
+                OnPropertyChanged("DegisSaat");
+            }
+        }
+
+        /// <summary> VARCHAR (12) * </summary>
+        public string DegisSurum
+        {
+            get { return this._DegisSurum; }
+            set
+            {
+                this._DegisSurum = value;
+                OnPropertyChanged("DegisSurum");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int DegisTarih
+        {
+            get { return this._DegisTarih; }
+            set
+            {
+                this._DegisTarih = value;
+                OnPropertyChanged("DegisTarih");
+            }
+        }
+
+        /// <summary> VARCHAR (5) * </summary>
+        public string Degistiren
+        {
+            get { return this._Degistiren; }
+            set
+            {
+                this._Degistiren = value;
+                OnPropertyChanged("Degistiren");
             }
         }
 
         /// <summary> VARCHAR (5) * </summary>
         public string Depo
         {
-            get { return depo; }
+            get { return Depo; }
             set
             {
-                depo = value;
+                Depo = value;
                 OnPropertyChanged("Depo");
             }
         }
@@ -449,79 +233,252 @@ namespace Birikim.Models.Finsat
         /// <summary> VARCHAR (5) * </summary>
         public string Depo2
         {
-            get { return depo2; }
+            get { return Depo2; }
             set
             {
-                depo2 = value;
+                Depo2 = value;
                 OnPropertyChanged("Depo2");
             }
         }
 
-        /// <summary> INT (4) IdentityKey * </summary>
-        public int Row_ID => row_ID;
-
-        /// <summary> TIMESTAMP (8) * </summary>
-        public byte[] timestamp
+        /// <summary> VARCHAR (16) PrimaryKey * </summary>
+        public string EvrakNo
         {
-            get { return _timestamp; }
+            get { return this._EvrakNo; }
             set
             {
-                _timestamp = value;
-                OnPropertyChanged("timestamp");
+                this._EvrakNo = value;
+                OnPropertyChanged("EvrakNo");
             }
         }
 
-        /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
-        public short pk_IslemTur
+        /// <summary> VARCHAR (16) PrimaryKey * </summary>
+        public string EvrakNo2
         {
-            private get { return _pk_IslemTur; }
+            get { return this._EvrakNo2; }
             set
             {
-                _pk_IslemTur = value;
-                OnPropertyChanged("pk_IslemTur");
+                this._EvrakNo2 = value;
+                OnPropertyChanged("EvrakNo2");
             }
         }
 
-        /// <summary> VARCHAR (16) PRIMARY KEY * </summary>
-        public string pk_EvrakNo
+        /// <summary> SMALLINT (2) * </summary>
+        public short IslemDurum
         {
-            private get { return _pk_EvrakNo; }
+            get { return this._IslemDurum; }
             set
             {
-                _pk_EvrakNo = value;
-                OnPropertyChanged("pk_EvrakNo");
+                this._IslemDurum = value;
+                OnPropertyChanged("IslemDurum");
             }
         }
 
-        /// <summary> INT (4) PRIMARY KEY * </summary>
-        public int pk_Tarih
+        /// <summary> SMALLINT (2) * </summary>
+        public short IslemTip
         {
-            private get { return _pk_Tarih; }
+            get { return this._IslemTip; }
             set
             {
-                _pk_Tarih = value;
-                OnPropertyChanged("pk_Tarih");
+                this._IslemTip = value;
+                OnPropertyChanged("IslemTip");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short IslemTip2
+        {
+            get { return this._IslemTip2; }
+            set
+            {
+                this._IslemTip2 = value;
+                OnPropertyChanged("IslemTip2");
+            }
+        }
+
+        /// <summary> SMALLINT (2) PrimaryKey * </summary>
+        public short IslemTur
+        {
+            get { return this._IslemTur; }
+            set
+            {
+                this._IslemTur = value;
+                OnPropertyChanged("IslemTur");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short IslemTur2
+        {
+            get { return this._IslemTur2; }
+            set
+            {
+                this._IslemTur2 = value;
+                OnPropertyChanged("IslemTur2");
+            }
+        }
+
+        /// <summary> VARCHAR (5) * </summary>
+        public string Kaydeden
+        {
+            get { return this._Kaydeden; }
+            set
+            {
+                this._Kaydeden = value;
+                OnPropertyChanged("Kaydeden");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short KayitKaynak
+        {
+            get { return this._KayitKaynak; }
+            set
+            {
+                this._KayitKaynak = value;
+                OnPropertyChanged("KayitKaynak");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int KayitSaat
+        {
+            get { return this._KayitSaat; }
+            set
+            {
+                this._KayitSaat = value;
+                OnPropertyChanged("KayitSaat");
+            }
+        }
+
+        /// <summary> VARCHAR (12) * </summary>
+        public string KayitSurum
+        {
+            get { return this._KayitSurum; }
+            set
+            {
+                this._KayitSurum = value;
+                OnPropertyChanged("KayitSurum");
+            }
+        }
+
+        /// <summary> INT (4) * </summary>
+        public int KayitTarih
+        {
+            get { return this._KayitTarih; }
+            set
+            {
+                this._KayitTarih = value;
+                OnPropertyChanged("KayitTarih");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short KayitTuru
+        {
+            get { return this._KayitTuru; }
+            set
+            {
+                this._KayitTuru = value;
+                OnPropertyChanged("KayitTuru");
+            }
+        }
+
+        /// <summary> SMALLINT (2) PrimaryKey * </summary>
+        public short KynkEvrakTip
+        {
+            get { return this._KynkEvrakTip; }
+            set
+            {
+                this._KynkEvrakTip = value;
+                OnPropertyChanged("KynkEvrakTip");
+            }
+        }
+
+        /// <summary> SMALLINT (2) * </summary>
+        public short KynkEvrakTip2
+        {
+            get { return this._KynkEvrakTip2; }
+            set
+            {
+                this._KynkEvrakTip2 = value;
+                OnPropertyChanged("KynkEvrakTip2");
+            }
+        }
+
+        /// <summary> VARCHAR (30) * </summary>
+        public string MalKodu
+        {
+            get { return this._MalKodu; }
+            set
+            {
+                this._MalKodu = value;
+                OnPropertyChanged("MalKodu");
+            }
+        }
+
+        /// <summary> NUMERIC (13) * </summary>
+        public decimal Miktar
+        {
+            get { return this._Miktar; }
+            set
+            {
+                this._Miktar = value;
+                OnPropertyChanged("Miktar");
             }
         }
 
         /// <summary> VARCHAR (20) PRIMARY KEY * </summary>
         public string pk_Chk
         {
-            private get { return _pk_Chk; }
+            private get { return this._pk_Chk; }
             set
             {
-                _pk_Chk = value;
+                this._pk_Chk = value;
                 OnPropertyChanged("pk_Chk");
+            }
+        }
+
+        /// <summary> VARCHAR (16) PRIMARY KEY * </summary>
+        public string pk_EvrakNo
+        {
+            private get { return this._pk_EvrakNo; }
+            set
+            {
+                this._pk_EvrakNo = value;
+                OnPropertyChanged("pk_EvrakNo");
+            }
+        }
+
+        /// <summary> VARCHAR (16) PRIMARY KEY * </summary>
+        public string pk_EvrakNo2
+        {
+            private get { return this._pk_EvrakNo2; }
+            set
+            {
+                this._pk_EvrakNo2 = value;
+                OnPropertyChanged("pk_EvrakNo2");
+            }
+        }
+
+        /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
+        public short pk_IslemTur
+        {
+            private get { return this._pk_IslemTur; }
+            set
+            {
+                this._pk_IslemTur = value;
+                OnPropertyChanged("pk_IslemTur");
             }
         }
 
         /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
         public short pk_KynkEvrakTip
         {
-            private get { return _pk_KynkEvrakTip; }
+            private get { return this._pk_KynkEvrakTip; }
             set
             {
-                _pk_KynkEvrakTip = value;
+                this._pk_KynkEvrakTip = value;
                 OnPropertyChanged("pk_KynkEvrakTip");
             }
         }
@@ -529,80 +486,103 @@ namespace Birikim.Models.Finsat
         /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
         public short pk_SiraNo
         {
-            private get { return _pk_SiraNo; }
+            private get { return this._pk_SiraNo; }
             set
             {
-                _pk_SiraNo = value;
+                this._pk_SiraNo = value;
                 OnPropertyChanged("pk_SiraNo");
-            }
-        }
-
-        /// <summary> VARCHAR (16) PRIMARY KEY * </summary>
-        public string pk_EvrakNo2
-        {
-            private get { return _pk_EvrakNo2; }
-            set
-            {
-                _pk_EvrakNo2 = value;
-                OnPropertyChanged("pk_EvrakNo2");
             }
         }
 
         /// <summary> SMALLINT (2) PRIMARY KEY * </summary>
         public short pk_SiraNo2
         {
-            private get { return _pk_SiraNo2; }
+            private get { return this._pk_SiraNo2; }
             set
             {
-                _pk_SiraNo2 = value;
+                this._pk_SiraNo2 = value;
                 OnPropertyChanged("pk_SiraNo2");
             }
         }
 
-        public IRS()
+        /// <summary> INT (4) PRIMARY KEY * </summary>
+        public int pk_Tarih
         {
-            ChangedProperties = new List<string>();
-            PropertyChanged += IRS_PropertyChanged;
+            private get { return this._pk_Tarih; }
+            set
+            {
+                this._pk_Tarih = value;
+                OnPropertyChanged("pk_Tarih");
+            }
         }
 
-        public void WhereAdd(IRSE Property, object deger, Operand and_Or = Operand.AND)
+        /// <summary> INT (4) IdentityKey * </summary>
+        public int Row_ID
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(IRSE), Property), deger, and_Or));
+            get { return this._Row_ID; }
         }
 
-        public void WhereAdd(IRSE Property, Islem islem, object Deger, Operand And_Or = Operand.AND)
+        /// <summary> SMALLINT (2) PrimaryKey * </summary>
+        public short SiraNo
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(IRSE), Property), islem, Deger, And_Or));
+            get { return this._SiraNo; }
+            set
+            {
+                this._SiraNo = value;
+                OnPropertyChanged("SiraNo");
+            }
         }
 
-        public void WhereAdd(IRSE Property, Operand In_NotIn, params object[] Degerler_Parantez)
+        /// <summary> SMALLINT (2) PrimaryKey * </summary>
+        public short SiraNo2
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Enum.GetName(typeof(IRSE), Property), In_NotIn, Degerler_Parantez));
+            get { return this._SiraNo2; }
+            set
+            {
+                this._SiraNo2 = value;
+                OnPropertyChanged("SiraNo2");
+            }
         }
 
-        public void WhereAdd(params object[] Degerler)
+        /// <summary> INT (4) PrimaryKey * </summary>
+        public int Tarih
         {
-            WhereList.Add(SqlExperOperatorIslem.WhereAdd(Degerler));
+            get { return this._Tarih; }
+            set
+            {
+                this._Tarih = value;
+                OnPropertyChanged("Tarih");
+            }
         }
 
-        /// <summary> Set işleminde Property " = " eşit ile otomatik başlar. </summary>
-        public void SetAdd(IRSE Property, params object[] Degerler)
+        /// <summary> INT (4) * </summary>
+        public int Tarih2
         {
-            SetList.Add(SqlExperOperatorIslem.SetAdd(Enum.GetName(typeof(IRSE), Property), Degerler));
+            get { return this._Tarih2; }
+            set
+            {
+                this._Tarih2 = value;
+                OnPropertyChanged("Tarih2");
+            }
         }
 
-        List<string> WhereList = new List<string>();
-        List<string> SetList = new List<string>();
-        string info_FullTableName = "FINSAT6{0}.FINSAT6{0}.IRS";
-        string[] info_PrimaryKeys = { "pk_IslemTur", "pk_EvrakNo", "pk_Tarih", "pk_Chk", "pk_KynkEvrakTip", "pk_SiraNo", "pk_EvrakNo2", "pk_SiraNo2" };
-        string[] info_IdentityKeys = { "Row_ID" };
+        /// <summary> TIMESTAMP (8) * </summary>
+        public byte[] timestamp
+        {
+            get { return this._timestamp; }
+            set
+            {
+                this._timestamp = value;
+                OnPropertyChanged("timestamp");
+            }
+        }
 
-        List<string> ChangedProperties = new List<string>();
-        public event PropertyChangedEventHandler PropertyChanged;
+        public void AcceptChanges()
+        {
+            ChangedProperties.Clear();
+        }
 
-        public void AcceptChanges() => ChangedProperties.Clear();
-
-        void IRS_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void IRS_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (!ChangedProperties.Contains(e.PropertyName))
             {
@@ -610,14 +590,13 @@ namespace Birikim.Models.Finsat
             }
         }
 
-        void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
     }
 
 }
