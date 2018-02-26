@@ -80,6 +80,7 @@
     <Compile Include="Models\Finsat\SPI.cs" />
     <Compile Include="Models\Finsat\STI.cs" />
     <Compile Include="Models\Finsat\STK.cs" />
+    <Compile Include="Models\KayitBilgi.cs" />
     <Compile Include="Models\Prop.cs" />
     <Compile Include="Enums\SetIslem.cs" />
     <Compile Include="Enums\SQLType.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Mail\Interfaces\IEmailConfiguration.cs" />
     <Compile Include="Mail\Interfaces\IEmailService.cs" />
     <Compile Include="Models\Result.cs" />
+    <Compile Include="Models\UysPln\EMG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\SimpleCryptography.cs" />
   </ItemGroup>
